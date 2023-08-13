@@ -42,9 +42,9 @@ class ProfileInfo extends StatelessWidget {
             height: 10,
           ),
           Text(
-              "lorem ipsum dolor sit amet, consectetur\n"
-              "adipiscing elit. Sed quis neque eget arcu\n"
-              "Sed quis neque eget arcu sodales feugiat.\n",
+              "A Google Developer Student Club (GDSC) lead at\n"
+              "Academic City University passionate about app\n"
+              "Sdevelopment with flutter.\n",
               softWrap: true,
               textScaleFactor: 1.5,
               style: TextStyle(color: Colors.white)),
