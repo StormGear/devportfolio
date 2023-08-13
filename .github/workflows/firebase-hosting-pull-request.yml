@@ -50,3 +50,5 @@ jobs:
           firebaseServiceAccount: '${{ secrets.FIREBASE_SERVICE_ACCOUNT_PAPAKOFIDEV }}'
           channelId: live
           projectId: papakofidev
+        env:
+          FIREBASE_CLI_EXPERIMENTS: webframeworks
