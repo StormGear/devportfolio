@@ -9,9 +9,6 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
-      - run: firebase deploy --only hosting
-        env:
-          FIREBASE_TOKEN: '${{ secrets.FIREBASE_TOKEN }}'
       - uses: FirebaseExtended/action-hosting-deploy@v0
         with:
           repoToken: '${{ secrets.GITHUB_TOKEN }}'
