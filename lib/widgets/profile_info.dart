@@ -44,7 +44,7 @@ class ProfileInfo extends StatelessWidget {
           Text(
               "A Google Developer Student Club (GDSC) lead at\n"
               "Academic City University passionate about app\n"
-              "Sdevelopment with flutter.\n",
+              "development with flutter.\n",
               softWrap: true,
               textScaleFactor: 1.5,
               style: TextStyle(color: Colors.white)),
