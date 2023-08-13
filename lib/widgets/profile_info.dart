@@ -30,7 +30,7 @@ class ProfileInfo extends StatelessWidget {
   Column profileData(Size size) => const Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          Text("Hi there! My name is",
+          Text("Hello there! My name is",
               textScaleFactor: 2, style: TextStyle(color: Colors.lightBlue)),
           Text(
             "Papa Kofi Boahen",
