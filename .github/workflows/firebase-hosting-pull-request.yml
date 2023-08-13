@@ -72,6 +72,9 @@ jobs:
       - name: Install Firebase CLI
         run: npm install -g firebase-tools
 
+      - name: Enable frameworks
+        run: firebase experiments:enable webframeworks
+
       - name: Deploy to Firebase Hosting
         run: firebase deploy --token "$FIREBASE_TOKEN"
         env:
