@@ -7,12 +7,15 @@ class Papa extends StatelessWidget {
   Widget build(BuildContext context) {
     return const Row(
       children: [
-        Text(
-          "< Papa />",
-          textScaleFactor: 2,
-          style: TextStyle(
-            color: Colors.lightBlue,
-            fontWeight: FontWeight.bold,
+        Padding(
+          padding: EdgeInsets.only(left: 8.0),
+          child: Text(
+            "< Papa />",
+            textScaleFactor: 2,
+            style: TextStyle(
+              color: Colors.lightBlue,
+              fontWeight: FontWeight.bold,
+            ),
           ),
         ),
       ],

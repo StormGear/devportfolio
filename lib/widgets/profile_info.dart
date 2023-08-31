@@ -7,12 +7,15 @@ class ProfileInfo extends StatelessWidget {
   AnimatedContainer profilePhoto(BuildContext context) {
     final Size size = MediaQuery.of(context).size;
     return AnimatedContainer(
+      margin: ResponsiveWidget.isSmallScreen(context)
+          ? EdgeInsets.only(bottom: size.height * 0.05)
+          : null,
       duration: const Duration(seconds: 1),
       height: ResponsiveWidget.isSmallScreen(context)
-          ? size.height * 0.20
+          ? size.height * 0.29
           : size.width * 0.29,
       width: ResponsiveWidget.isSmallScreen(context)
-          ? size.height * 0.20
+          ? size.height * 0.29
           : size.width * 0.20,
       decoration: const BoxDecoration(
         backgroundBlendMode: BlendMode.luminosity,
@@ -31,10 +34,13 @@ class ProfileInfo extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Text("Hello there! My name is",
-              textScaleFactor: 2, style: TextStyle(color: Colors.lightBlue)),
+              textScaleFactor: 1.5,
+              style: TextStyle(
+                color: Colors.lightBlue,
+              )),
           Text(
             "Papa Kofi Boahen",
-            textScaleFactor: 2,
+            textScaleFactor: 1.5,
             style:
                 TextStyle(color: Colors.lightBlue, fontWeight: FontWeight.bold),
           ),
@@ -46,7 +52,7 @@ class ProfileInfo extends StatelessWidget {
               "Academic City University passionate about app\n"
               "development with flutter.\n",
               softWrap: true,
-              textScaleFactor: 1.5,
+              textScaleFactor: 1.2,
               style: TextStyle(color: Colors.white)),
           SizedBox(height: 20),
           // Row(

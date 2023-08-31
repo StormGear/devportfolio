@@ -69,11 +69,11 @@ class SocialInfo extends StatelessWidget {
             children: [
               Image(
                   image: AssetImage('assets/flutter.png'),
-                  height: 35.0,
-                  width: 35.0),
+                  height: 25.0,
+                  width: 25.0),
               Text(
                 "made with Flutter",
-                textScaleFactor: 1,
+                textScaleFactor: 0.8,
                 style: TextStyle(color: Colors.white),
               ),
             ],
@@ -135,11 +135,11 @@ class SocialInfo extends StatelessWidget {
           children: [
             Image(
                 image: AssetImage('assets/flutter.png'),
-                height: 35.0,
-                width: 35.0),
+                height: 25.0,
+                width: 25.0),
             Text(
               "Made with Flutter",
-              textScaleFactor: 1,
+              textScaleFactor: 0.8,
               style: TextStyle(color: Colors.white),
             ),
           ],
