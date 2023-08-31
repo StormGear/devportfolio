@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:portfolio/widgets/about_section.dart';
+import 'package:portfolio/widgets/name.dart';
 import 'package:portfolio/widgets/navbar.dart';
 import 'package:portfolio/widgets/profile_info.dart';
 import 'package:portfolio/widgets/responsive_widget.dart';
@@ -26,8 +27,14 @@ class _ProfilePageState extends State<ProfilePage> {
             iconTheme: const IconThemeData(
               color: Colors.white, // Change this color to your desired color
             ),
+            leading: const Papa(),
             elevation: 0.0,
             backgroundColor: Colors.black,
+            actions: [
+              NavBar(
+                idKey: socialInfoKey,
+              ),
+            ],
           ),
           drawer: ResponsiveWidget.isSmallScreen(context)
               ? MenuDrawer(
@@ -43,15 +50,13 @@ class _ProfilePageState extends State<ProfilePage> {
                 largeScreen: Column(
                     mainAxisAlignment: MainAxisAlignment.start,
                     children: [
-                      NavBar(
-                        idKey: socialInfoKey,
-                      ),
+                      const Papa(),
                       SizedBox(
-                        height: size.height * 0.1,
+                        height: size.height * 0.05,
                       ),
                       const ProfileInfo(),
                       SizedBox(
-                        height: size.height * 0.2,
+                        height: size.height * 0.1,
                       ),
                       const AboutSection(),
                       SizedBox(

@@ -11,12 +11,12 @@ class AboutSection extends StatelessWidget {
       largeScreen: Container(
         width: size.width,
         height: size.height * 0.2,
-        decoration: const BoxDecoration(color: Colors.red),
+        decoration: const BoxDecoration(color: Colors.white),
       ),
       smallScreen: Container(
         width: size.width,
         height: size.height * 0.2,
-        decoration: const BoxDecoration(color: Colors.red),
+        decoration: const BoxDecoration(color: Colors.white),
       ),
     );
   }

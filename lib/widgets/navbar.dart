@@ -4,15 +4,10 @@ import 'package:portfolio/widgets/navbutton.dart';
 import 'package:portfolio/widgets/responsive_widget.dart';
 
 class NavBar extends StatelessWidget {
-  NavBar({super.key, this.idKey});
+  const NavBar({super.key, this.idKey, this.needed});
 
   final GlobalKey? idKey;
-
-  final GlobalKey<ScaffoldState> _scaffoldKey = GlobalKey<ScaffoldState>();
-
-  void _closeDrawer() {
-    _scaffoldKey.currentState?.closeEndDrawer();
-  }
+  final bool? needed;
 
   @override
   Widget build(BuildContext context) {
@@ -24,7 +19,6 @@ class NavBar extends StatelessWidget {
           : MainAxisAlignment.spaceBetween,
       crossAxisAlignment: CrossAxisAlignment.center,
       children: [
-        const Papa(),
         if (!ResponsiveWidget.isSmallScreen(context))
           Row(children: [
             // NavButton(

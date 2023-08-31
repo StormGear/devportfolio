@@ -30,58 +30,61 @@ class ProfileInfo extends StatelessWidget {
     );
   }
 
-  Column profileData(Size size) => const Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          Text("Hello there! My name is",
+  Padding profileData(Size size) => const Padding(
+        padding: EdgeInsets.only(left: 8.0),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Text("Hello there! My name is",
+                textScaleFactor: 1.5,
+                style: TextStyle(
+                  color: Colors.lightBlue,
+                )),
+            Text(
+              "Papa Kofi Boahen",
               textScaleFactor: 1.5,
               style: TextStyle(
-                color: Colors.lightBlue,
-              )),
-          Text(
-            "Papa Kofi Boahen",
-            textScaleFactor: 1.5,
-            style:
-                TextStyle(color: Colors.lightBlue, fontWeight: FontWeight.bold),
-          ),
-          SizedBox(
-            height: 10,
-          ),
-          Text(
-              "A Google Developer Student Club (GDSC) lead at\n"
-              "Academic City University passionate about app\n"
-              "development with flutter.\n",
-              softWrap: true,
-              textScaleFactor: 1.2,
-              style: TextStyle(color: Colors.white)),
-          SizedBox(height: 20),
-          // Row(
-          //   mainAxisAlignment: MainAxisAlignment.start,
-          //   children: [
-          //     ElevatedButton(
-          //       onPressed: () {},
-          //       style: ElevatedButton.styleFrom(
-          //         padding: const EdgeInsets.all(10.0),
-          //         shape: RoundedRectangleBorder(
-          //           borderRadius: BorderRadius.circular(20),
-          //         ),
-          //         backgroundColor: Colors.red,
-          //       ),
-          //       child: const Text("Resume"),
-          //     ),
-          //     SizedBox(width: size.width * 0.01),
-          //     OutlinedButton(
-          //       onPressed: () {},
-          //       style: OutlinedButton.styleFrom(
-          //         // foregroundColor: color,
-          //         shape: const StadiumBorder(),
-          //         side: const BorderSide(color: Colors.red),
-          //       ),
-          //       child: const Text("Contact Me"),
-          //     )
-          //   ],
-          // )
-        ],
+                  color: Colors.lightBlue, fontWeight: FontWeight.bold),
+            ),
+            SizedBox(
+              height: 10,
+            ),
+            Text(
+                "A Google Developer Student Club (GDSC) lead at\n"
+                "Academic City University passionate about app\n"
+                "development with flutter.\n",
+                softWrap: true,
+                textScaleFactor: 1.2,
+                style: TextStyle(color: Colors.white)),
+            SizedBox(height: 20),
+            // Row(
+            //   mainAxisAlignment: MainAxisAlignment.start,
+            //   children: [
+            //     ElevatedButton(
+            //       onPressed: () {},
+            //       style: ElevatedButton.styleFrom(
+            //         padding: const EdgeInsets.all(10.0),
+            //         shape: RoundedRectangleBorder(
+            //           borderRadius: BorderRadius.circular(20),
+            //         ),
+            //         backgroundColor: Colors.red,
+            //       ),
+            //       child: const Text("Resume"),
+            //     ),
+            //     SizedBox(width: size.width * 0.01),
+            //     OutlinedButton(
+            //       onPressed: () {},
+            //       style: OutlinedButton.styleFrom(
+            //         // foregroundColor: color,
+            //         shape: const StadiumBorder(),
+            //         side: const BorderSide(color: Colors.red),
+            //       ),
+            //       child: const Text("Contact Me"),
+            //     )
+            //   ],
+            // )
+          ],
+        ),
       );
 
   @override
