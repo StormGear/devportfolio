@@ -1,10 +1,14 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import 'package:portfolio/controllers/slider_page_controller.dart';
 import 'package:portfolio/widgets/about_section.dart';
 import 'package:portfolio/widgets/name.dart';
 import 'package:portfolio/widgets/navbar.dart';
 import 'package:portfolio/widgets/profile_info.dart';
 import 'package:portfolio/widgets/responsive_widget.dart';
+import 'package:portfolio/widgets/skills_section.dart';
 import 'package:portfolio/widgets/social_info.dart';
+import '../presentation/skill_pages.dart';
 import '../widgets/menu_drawer.dart';
 
 class ProfilePage extends StatefulWidget {
@@ -19,6 +23,7 @@ class _ProfilePageState extends State<ProfilePage> {
   Widget build(BuildContext context) {
     final Size size = MediaQuery.of(context).size;
     var socialInfoKey = GlobalKey();
+    Get.put<SliderPageController>(SliderPageController());
 
     return ResponsiveWidget(
       largeScreen: Scaffold(
@@ -43,30 +48,45 @@ class _ProfilePageState extends State<ProfilePage> {
                   idKey: socialInfoKey,
                 )
               : null,
-          body: SingleChildScrollView(
-            child: AnimatedPadding(
-              duration: const Duration(seconds: 1),
-              padding: EdgeInsets.all(size.height * 0.01),
-              child: ResponsiveWidget(
-                largeScreen: Column(
-                    mainAxisAlignment: MainAxisAlignment.start,
-                    children: [
-                      const Papa(),
-                      SizedBox(
-                        height: size.height * 0.05,
-                      ),
-                      const ProfileInfo(),
-                      SizedBox(
-                        height: size.height * 0.1,
-                      ),
-                      const AboutSection(),
-                      SizedBox(
-                        height: size.height * 0.2,
-                      ),
-                      SocialInfo(
-                        key: socialInfoKey,
-                      ),
-                    ]),
+          body: NestedScrollView(
+            headerSliverBuilder:
+                (BuildContext context, bool innerBoxIsScrolled) {
+              // Customize your header here if needed.
+              return <Widget>[
+                const SliverAppBar(
+                  title: Text('Header Title'),
+                  pinned: true, // The app bar remains visible when scrolling.
+                ),
+              ];
+            },
+            body: SingleChildScrollView(
+              child: AnimatedPadding(
+                duration: const Duration(seconds: 1),
+                padding: EdgeInsets.all(size.height * 0.01),
+                child: ResponsiveWidget(
+                  largeScreen: Column(
+                      mainAxisAlignment: MainAxisAlignment.start,
+                      children: [
+                        const Papa(),
+                        SizedBox(
+                          height: size.height * 0.05,
+                        ),
+                        const ProfileInfo(),
+                        SizedBox(
+                          height: size.height * 0.1,
+                        ),
+                        const AboutSection(),
+                        SizedBox(
+                          height: size.height * 0.2,
+                        ),
+                        const SkillSection(),
+                        // Add the PageView with horizontal scroll.
+                        const SkillPages(),
+                        SocialInfo(
+                          key: socialInfoKey,
+                        ),
+                      ]),
+                ),
               ),
             ),
           )),

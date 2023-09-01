@@ -30,39 +30,47 @@ class AboutSection extends StatelessWidget {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            Text("About Papa Kofi",
-                textScaleFactor: 1.5,
-                style: TextStyle(
-                  color: Colors.lightBlue,
-                )),
-            SizedBox(
-              height: 10,
+            Padding(
+              padding: EdgeInsets.only(left: 15.0),
+              child: Column(
+                children: [
+                  Text("About Papa Kofi",
+                      textScaleFactor: 1.5,
+                      style: TextStyle(
+                        color: Colors.lightBlue,
+                      )),
+                  SizedBox(
+                    height: 10,
+                  ),
+                  Row(
+                    children: [
+                      Text("I am a ",
+                          textScaleFactor: 1,
+                          style: TextStyle(
+                            color: Colors.lightBlue,
+                          )),
+                      Text(
+                        "Student",
+                        textScaleFactor: 1,
+                        style: TextStyle(
+                            color: Colors.lightBlue,
+                            fontWeight: FontWeight.bold),
+                      ),
+                    ],
+                  ),
+                  SizedBox(
+                    height: 10,
+                  ),
+                  Text(
+                      "A Google Developer Student Club (GDSC) lead at "
+                      "Academic City University passionate about app "
+                      "development with flutter.\n",
+                      softWrap: true,
+                      textScaleFactor: 1.2,
+                      style: TextStyle(color: Colors.white)),
+                ],
+              ),
             ),
-            Row(
-              children: [
-                Text("I am a ",
-                    textScaleFactor: 1,
-                    style: TextStyle(
-                      color: Colors.lightBlue,
-                    )),
-                Text(
-                  "Student",
-                  textScaleFactor: 1,
-                  style: TextStyle(
-                      color: Colors.lightBlue, fontWeight: FontWeight.bold),
-                ),
-              ],
-            ),
-            SizedBox(
-              height: 10,
-            ),
-            Text(
-                "A Google Developer Student Club (GDSC) lead at "
-                "Academic City University passionate about app "
-                "development with flutter.\n",
-                softWrap: true,
-                textScaleFactor: 1.2,
-                style: TextStyle(color: Colors.white)),
             SizedBox(height: 20),
             // Row(
             //   mainAxisAlignment: MainAxisAlignment.start,

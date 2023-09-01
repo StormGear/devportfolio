@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:portfolio/widgets/quick_contact.dart';
 import 'package:portfolio/widgets/responsive_widget.dart';
 import 'package:simple_icons/simple_icons.dart';
 import 'package:url_launcher/url_launcher.dart';
@@ -16,6 +17,16 @@ class SocialInfo extends StatelessWidget {
           Row(
             mainAxisAlignment: MainAxisAlignment.start,
             children: [
+              IconButton(
+                onPressed: () async {
+                  launchEmailClient("papakofiboahen@gmail.com");
+                },
+                icon: const Icon(
+                  SimpleIcons.gmail,
+                  color: Colors.red,
+                ),
+                alignment: Alignment.centerLeft,
+              ),
               IconButton(
                 onPressed: () async {
                   var url = Uri.https('github.com', '/Boahen123');
@@ -72,7 +83,7 @@ class SocialInfo extends StatelessWidget {
                   height: 25.0,
                   width: 25.0),
               Text(
-                "made with Flutter",
+                "made with flutter",
                 textScaleFactor: 0.8,
                 style: TextStyle(color: Colors.white),
               ),
@@ -85,6 +96,16 @@ class SocialInfo extends StatelessWidget {
         Row(
           // mainAxisAlignment: MainAxisAlignment.start,
           children: [
+            IconButton(
+              onPressed: () async {
+                launchEmailClient("papakofiboahen@gmail.com");
+              },
+              icon: const Icon(
+                SimpleIcons.gmail,
+                color: Colors.red,
+              ),
+              alignment: Alignment.centerLeft,
+            ),
             IconButton(
               onPressed: () async {
                 var url = Uri.https('github.com', '/Boahen123');

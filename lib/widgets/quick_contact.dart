@@ -18,6 +18,16 @@ class QuickContact extends StatelessWidget {
             children: [
               IconButton(
                 onPressed: () async {
+                  launchEmailClient("papakofiboahen@gmail.com");
+                },
+                icon: const Icon(
+                  SimpleIcons.gmail,
+                  color: Colors.red,
+                ),
+                alignment: Alignment.centerLeft,
+              ),
+              IconButton(
+                onPressed: () async {
                   var url = Uri.https('github.com', '/Boahen123');
                   if (await canLaunchUrl(url)) {
                     await launchUrl(url);
@@ -74,6 +84,16 @@ class QuickContact extends StatelessWidget {
           children: [
             IconButton(
               onPressed: () async {
+                launchEmailClient("papakofiboahen@gmail.com");
+              },
+              icon: const Icon(
+                SimpleIcons.gmail,
+                color: Colors.red,
+              ),
+              alignment: Alignment.centerLeft,
+            ),
+            IconButton(
+              onPressed: () async {
                 var url = Uri.https('github.com', '/Boahen123');
                 if (await canLaunchUrl(url)) {
                   await launchUrl(url);
@@ -120,5 +140,26 @@ class QuickContact extends StatelessWidget {
         ),
       ]),
     );
+  }
+}
+
+void launchEmailClient(String recipient) async {
+  String? encodeQueryParameters(Map<String, String> params) {
+    return params.entries
+        .map((MapEntry<String, String> e) =>
+            '${Uri.encodeComponent(e.key)}=${Uri.encodeComponent(e.value)}')
+        .join('&');
+  }
+
+  final Uri params = Uri(
+    scheme: 'mailto',
+    path: recipient,
+    query: encodeQueryParameters(<String, String>{'subject': 'Hello, '}),
+  );
+
+  if (await canLaunchUrl(params)) {
+    await launchUrl(params);
+  } else {
+    // console.d('Could not launch email client');
   }
 }
