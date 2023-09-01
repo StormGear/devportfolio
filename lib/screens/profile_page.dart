@@ -27,7 +27,8 @@ class _ProfilePageState extends State<ProfilePage> {
             iconTheme: const IconThemeData(
               color: Colors.white, // Change this color to your desired color
             ),
-            leading: const Papa(),
+            // leading:
+            //     ResponsiveWidget.isSmallScreen(context) ? null : const Papa(),
             elevation: 0.0,
             backgroundColor: Colors.black,
             actions: [

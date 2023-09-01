@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:portfolio/widgets/name.dart';
+// import 'package:portfolio/widgets/name.dart';
 import 'package:portfolio/widgets/navbutton.dart';
 import 'package:portfolio/widgets/responsive_widget.dart';
 

@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:portfolio/widgets/quick_contact.dart';
 import 'package:portfolio/widgets/responsive_widget.dart';
+// import 'package:portfolio/widgets/social_info.dart';
 
 class ProfileInfo extends StatelessWidget {
   const ProfileInfo({super.key});
@@ -49,14 +51,12 @@ class ProfileInfo extends StatelessWidget {
             SizedBox(
               height: 10,
             ),
-            Text(
-                "A Google Developer Student Club (GDSC) lead at\n"
-                "Academic City University passionate about app\n"
-                "development with flutter.\n",
+            Text("Flutter Developer || Computer Engineering Student \n",
                 softWrap: true,
                 textScaleFactor: 1.2,
                 style: TextStyle(color: Colors.white)),
             SizedBox(height: 20),
+            QuickContact()
             // Row(
             //   mainAxisAlignment: MainAxisAlignment.start,
             //   children: [
