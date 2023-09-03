@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:portfolio/strings/image_strings.dart';
+import 'package:portfolio/strings/main_content.dart';
 import 'package:portfolio/widgets/quick_contact.dart';
 import 'package:portfolio/widgets/responsive_widget.dart';
-// import 'package:portfolio/widgets/social_info.dart';
 
 class ProfileInfo extends StatelessWidget {
   const ProfileInfo({super.key});
@@ -24,7 +25,7 @@ class ProfileInfo extends StatelessWidget {
         color: Colors.lightBlue,
         shape: BoxShape.circle,
         image: DecorationImage(
-          image: AssetImage('assets/papakofi.jpg'),
+          image: AssetImage(papakofi),
           alignment: Alignment.center,
           fit: BoxFit.cover,
         ),
@@ -51,7 +52,7 @@ class ProfileInfo extends StatelessWidget {
             SizedBox(
               height: 10,
             ),
-            Text("Flutter Developer || Computer Engineering Student \n",
+            Text(headline,
                 softWrap: true,
                 textScaleFactor: 1.2,
                 style: TextStyle(color: Colors.white)),

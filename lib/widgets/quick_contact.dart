@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/flutter_svg.dart';
+import 'package:portfolio/strings/image_strings.dart';
 import 'package:portfolio/widgets/responsive_widget.dart';
 import 'package:simple_icons/simple_icons.dart';
 import 'package:url_launcher/url_launcher.dart';
@@ -20,9 +22,9 @@ class QuickContact extends StatelessWidget {
                 onPressed: () async {
                   launchEmailClient("papakofiboahen@gmail.com");
                 },
-                icon: const Icon(
-                  SimpleIcons.gmail,
-                  color: Colors.red,
+                icon: SvgPicture.asset(
+                  gmailLogo,
+                  height: 35,
                 ),
                 alignment: Alignment.centerLeft,
               ),
@@ -86,9 +88,9 @@ class QuickContact extends StatelessWidget {
               onPressed: () async {
                 launchEmailClient("papakofiboahen@gmail.com");
               },
-              icon: const Icon(
-                SimpleIcons.gmail,
-                color: Colors.red,
+              icon: SvgPicture.asset(
+                gmailLogo,
+                height: 35,
               ),
               alignment: Alignment.centerLeft,
             ),

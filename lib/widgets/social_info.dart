@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/flutter_svg.dart';
+import 'package:portfolio/strings/image_strings.dart';
 import 'package:portfolio/widgets/quick_contact.dart';
 import 'package:portfolio/widgets/responsive_widget.dart';
 import 'package:simple_icons/simple_icons.dart';
@@ -21,9 +23,9 @@ class SocialInfo extends StatelessWidget {
                 onPressed: () async {
                   launchEmailClient("papakofiboahen@gmail.com");
                 },
-                icon: const Icon(
-                  SimpleIcons.gmail,
-                  color: Colors.red,
+                icon: SvgPicture.asset(
+                  gmailLogo,
+                  height: 35,
                 ),
                 alignment: Alignment.centerLeft,
               ),
@@ -78,10 +80,7 @@ class SocialInfo extends StatelessWidget {
           ),
           const Row(
             children: [
-              Image(
-                  image: AssetImage('assets/flutter.png'),
-                  height: 25.0,
-                  width: 25.0),
+              Image(image: AssetImage(flutterLogo), height: 25.0, width: 25.0),
               Text(
                 "made with flutter",
                 textScaleFactor: 0.8,
@@ -100,9 +99,9 @@ class SocialInfo extends StatelessWidget {
               onPressed: () async {
                 launchEmailClient("papakofiboahen@gmail.com");
               },
-              icon: const Icon(
-                SimpleIcons.gmail,
-                color: Colors.red,
+              icon: SvgPicture.asset(
+                gmailLogo,
+                height: 35,
               ),
               alignment: Alignment.centerLeft,
             ),
@@ -154,12 +153,9 @@ class SocialInfo extends StatelessWidget {
         ),
         const Row(
           children: [
-            Image(
-                image: AssetImage('assets/flutter.png'),
-                height: 25.0,
-                width: 25.0),
+            Image(image: AssetImage(flutterLogo), height: 25.0, width: 25.0),
             Text(
-              "Made with Flutter",
+              "made with flutter",
               textScaleFactor: 0.8,
               style: TextStyle(color: Colors.white),
             ),

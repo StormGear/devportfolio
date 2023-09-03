@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 class SkillModel {
-  final Icon icon;
+  final Widget icon;
   final String skillname;
 
   SkillModel({

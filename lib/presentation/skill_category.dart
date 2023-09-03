@@ -12,23 +12,20 @@ class SkillCategory extends StatefulWidget {
 }
 
 class SkillCategoryState extends State<SkillCategory> {
-  final List<Widget> _screens = [
-    const ScheduledScreen(),
-    const CompletedScreen(),
-  ];
-
   @override
   Widget build(BuildContext context) {
     // final Size size = MediaQuery.of(context).size;
-    final SliderPageController _controller = SliderPageController.instance;
+    final SliderPageController controller = SliderPageController.instance;
     return Container(
-      decoration: const BoxDecoration(color: Colors.white),
+      decoration: const BoxDecoration(color: Colors.black),
       // width: size.width,
       // height: size.height * 0.2,
       child: Column(
         children: [
           const Center(
-            child: Text("My Skills"),
+            child: Text("My Skills",
+                textScaleFactor: 1.5,
+                style: TextStyle(color: Colors.lightBlue)),
           ),
           Container(
             padding: const EdgeInsets.all(16.0),
@@ -38,8 +35,8 @@ class SkillCategoryState extends State<SkillCategory> {
                 children: [
                   GestureDetector(
                     onTap: () {
-                      _controller.changeIndex(0);
-                      _controller.nextPage(_controller.pageController, 0);
+                      controller.changeIndex(0);
+                      controller.nextPage(controller.pageController, 0);
                     },
                     child: Container(
                       padding: const EdgeInsets.symmetric(vertical: 8.0),
@@ -48,7 +45,7 @@ class SkillCategoryState extends State<SkillCategory> {
                           bottom: BorderSide(
                             color:
                                 SliderPageController.instance.currentIndex == 0
-                                    ? Colors.red
+                                    ? Colors.white
                                     : Colors.transparent,
                             width: 2.0,
                           ),
@@ -56,17 +53,18 @@ class SkillCategoryState extends State<SkillCategory> {
                       ),
                       child: const Text(
                         'Technical Skills',
+                        textScaleFactor: 1,
                         style: TextStyle(
-                          fontSize: 18.0,
-                          fontWeight: FontWeight.bold,
-                        ),
+                            fontSize: 18.0,
+                            fontWeight: FontWeight.bold,
+                            color: Colors.lightBlue),
                       ),
                     ),
                   ),
                   GestureDetector(
                     onTap: () {
-                      _controller.changeIndex(1);
-                      _controller.nextPage(
+                      controller.changeIndex(1);
+                      controller.nextPage(
                           SliderPageController.instance.pageController, 1);
                     },
                     child: Container(
@@ -76,7 +74,7 @@ class SkillCategoryState extends State<SkillCategory> {
                           bottom: BorderSide(
                             color:
                                 SliderPageController.instance.currentIndex == 1
-                                    ? Colors.red
+                                    ? Colors.white
                                     : Colors.transparent,
                             width: 2.0,
                           ),
@@ -84,10 +82,11 @@ class SkillCategoryState extends State<SkillCategory> {
                       ),
                       child: const Text(
                         'Non-Technical Skills',
+                        textScaleFactor: 1,
                         style: TextStyle(
-                          fontSize: 18.0,
-                          fontWeight: FontWeight.bold,
-                        ),
+                            fontSize: 18.0,
+                            fontWeight: FontWeight.bold,
+                            color: Colors.lightBlue),
                       ),
                     ),
                   ),
@@ -96,38 +95,6 @@ class SkillCategoryState extends State<SkillCategory> {
             ),
           ),
         ],
-      ),
-    );
-  }
-}
-
-class ScheduledScreen extends StatelessWidget {
-  const ScheduledScreen({super.key});
-  @override
-  Widget build(BuildContext context) {
-    final Size size = MediaQuery.of(context).size;
-    return Container(
-      decoration: const BoxDecoration(color: Colors.red),
-      // width: size.width,
-      height: size.height * 0.5,
-      child: const Center(
-        child: Text('Scheduled Screen'),
-      ),
-    );
-  }
-}
-
-class CompletedScreen extends StatelessWidget {
-  const CompletedScreen({super.key});
-  @override
-  Widget build(BuildContext context) {
-    final Size size = MediaQuery.of(context).size;
-    return Container(
-      decoration: const BoxDecoration(color: Colors.green),
-      // width: size.width,
-      height: size.height * 0.5,
-      child: const Center(
-        child: Text('Completed Screen'),
       ),
     );
   }

@@ -2,10 +2,12 @@ import 'package:flutter/material.dart';
 // import 'package:portfolio/screens/profile_page.dart';
 
 class MenuDrawer extends StatelessWidget {
-  const MenuDrawer({super.key, required this.size, this.idKey});
+  const MenuDrawer({
+    super.key,
+    required this.size,
+  });
 
   final Size size;
-  final GlobalKey? idKey;
 
   @override
   Widget build(BuildContext context) {
@@ -22,11 +24,7 @@ class MenuDrawer extends StatelessWidget {
                   fontSize: 20,
                   fontWeight: FontWeight.bold),
             ),
-            onTap: () {
-              Scrollable.ensureVisible(idKey!.currentContext!,
-                  duration: const Duration(seconds: 1));
-              Navigator.pop(context);
-            },
+            onTap: () {},
           ),
           SizedBox(
             width: size.width * 0.01,

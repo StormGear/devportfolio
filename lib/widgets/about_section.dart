@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:portfolio/strings/image_strings.dart';
+import 'package:portfolio/strings/main_content.dart';
 import 'package:portfolio/widgets/responsive_widget.dart';
 
 class AboutSection extends StatelessWidget {
@@ -19,7 +21,7 @@ class AboutSection extends StatelessWidget {
           ? size.height * 0.29
           : size.width * 0.20,
       child: SvgPicture.asset(
-        'assets/images/about.svg',
+        aboutMe,
         // height: size.height * 0.29,
       ),
     );
@@ -61,10 +63,7 @@ class AboutSection extends StatelessWidget {
                   SizedBox(
                     height: 10,
                   ),
-                  Text(
-                      "A Google Developer Student Club (GDSC) lead at "
-                      "Academic City University passionate about app "
-                      "development with flutter.\n",
+                  Text(about,
                       softWrap: true,
                       textScaleFactor: 1.2,
                       style: TextStyle(color: Colors.white)),

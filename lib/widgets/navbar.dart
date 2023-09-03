@@ -1,13 +1,24 @@
 import 'package:flutter/material.dart';
+import 'package:portfolio/controllers/slider_page_controller.dart';
 // import 'package:portfolio/widgets/name.dart';
 import 'package:portfolio/widgets/navbutton.dart';
 import 'package:portfolio/widgets/responsive_widget.dart';
 
 class NavBar extends StatelessWidget {
-  const NavBar({super.key, this.idKey, this.needed});
+  NavBar(
+      {super.key,
+      this.contactLocation,
+      this.skillsLocation,
+      this.aboutLocation});
 
-  final GlobalKey? idKey;
-  final bool? needed;
+  final double? contactLocation;
+  final double? skillsLocation;
+  final double? aboutLocation;
+
+  final ScrollController scrollController =
+      SliderPageController.instance.scrollController;
+  final SliderPageController sliderPageController =
+      SliderPageController.instance;
 
   @override
   Widget build(BuildContext context) {
@@ -21,17 +32,22 @@ class NavBar extends StatelessWidget {
       children: [
         if (!ResponsiveWidget.isSmallScreen(context))
           Row(children: [
-            // NavButton(
-            //   text: "About",
-            //   onPressed: () {},
-            // ),
-            // SizedBox(
-            //   width: size.width * 0.01,
-            // ),
-            // NavButton(
-            //   text: "Projects",
-            //   onPressed: () {},
-            // ),
+            NavButton(
+              text: "About",
+              onPressed: () {
+                sliderPageController.scrollTo(scrollController, aboutLocation!);
+              },
+            ),
+            SizedBox(
+              width: size.width * 0.01,
+            ),
+            NavButton(
+              text: "Skills",
+              onPressed: () {
+                sliderPageController.scrollTo(
+                    scrollController, skillsLocation!);
+              },
+            ),
             SizedBox(
               width: size.width * 0.01,
             ),
@@ -40,8 +56,8 @@ class NavBar extends StatelessWidget {
               child: NavButton(
                 text: "Contact",
                 onPressed: () {
-                  Scrollable.ensureVisible(idKey!.currentContext!,
-                      duration: const Duration(seconds: 1));
+                  sliderPageController.scrollTo(
+                      scrollController, contactLocation!);
                 },
               ),
             ),
