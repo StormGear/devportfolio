@@ -35,6 +35,9 @@ class _ProfilePageState extends State<ProfilePage> {
           drawer: ResponsiveWidget.isSmallScreen(context)
               ? MenuDrawer(
                   size: size,
+                  contactLocation: contactLocation,
+                  aboutLocation: aboutLocation,
+                  skillsLocation: skillsLocation,
                 )
               : null,
           body: NestedScrollView(

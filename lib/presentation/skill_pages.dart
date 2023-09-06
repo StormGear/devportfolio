@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 import 'package:portfolio/controllers/slider_page_controller.dart';
 import 'package:portfolio/models/skill_model.dart';
 import 'package:portfolio/strings/image_strings.dart';
@@ -11,7 +12,7 @@ class SkillPages extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: 100, // Set a fixed height for the PageView.
+      height: 110, // Set a fixed height for the PageView.
       child: PageView(
         controller: SliderPageController.instance.pageController,
         onPageChanged: (index) {
@@ -72,4 +73,50 @@ List<SkillModel> skills = [
         height: 35,
       ),
       skillname: "flutter"),
+  SkillModel(
+      icon: SvgPicture.asset(
+        pythonLogo,
+        height: 35,
+      ),
+      skillname: "Python"),
+  SkillModel(
+      icon: SvgPicture.asset(
+        javascriptLogo,
+        height: 35,
+      ),
+      skillname: "JavaScript"),
+  SkillModel(
+      icon: SvgPicture.asset(
+        postgresqlLogo,
+        height: 35,
+      ),
+      skillname: "PostgreSql"),
+  SkillModel(
+      icon: SvgPicture.asset(
+        gitLogo,
+        height: 35,
+      ),
+      skillname: "Git"),
+  SkillModel(
+      icon: SvgPicture.asset(
+        arduinoLogo,
+        height: 35,
+      ),
+      skillname: "Arduino"),
+  SkillModel(
+      icon: Container(
+        decoration: BoxDecoration(
+            borderRadius: BorderRadius.circular(10), color: Colors.white),
+        child: SvgPicture.asset(
+          githubLogo,
+          height: 35,
+        ),
+      ),
+      skillname: "GitHub"),
+  SkillModel(
+      icon: SvgPicture.asset(
+        matlabLogo,
+        height: 35,
+      ),
+      skillname: "Matlab"),
 ];

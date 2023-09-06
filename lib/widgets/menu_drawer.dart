@@ -1,13 +1,24 @@
 import 'package:flutter/material.dart';
+import 'package:portfolio/controllers/slider_page_controller.dart';
 // import 'package:portfolio/screens/profile_page.dart';
 
 class MenuDrawer extends StatelessWidget {
-  const MenuDrawer({
+  MenuDrawer({
     super.key,
     required this.size,
+    this.aboutLocation,
+    this.contactLocation,
+    this.skillsLocation,
   });
 
+  final double? contactLocation;
+  final double? skillsLocation;
+  final double? aboutLocation;
   final Size size;
+  final ScrollController scrollController =
+      SliderPageController.instance.scrollController;
+  final SliderPageController sliderPageController =
+      SliderPageController.instance;
 
   @override
   Widget build(BuildContext context) {
@@ -18,13 +29,48 @@ class MenuDrawer extends StatelessWidget {
         children: [
           ListTile(
             title: const Text(
+              "About",
+              style: TextStyle(
+                  color: Colors.white,
+                  fontSize: 20,
+                  fontWeight: FontWeight.bold),
+            ),
+            onTap: () {
+              sliderPageController.scrollTo(scrollController, aboutLocation!);
+              Navigator.pop(context);
+            },
+          ),
+          SizedBox(
+            width: size.width * 0.01,
+          ),
+          ListTile(
+            title: const Text(
+              "Skills",
+              style: TextStyle(
+                  color: Colors.white,
+                  fontSize: 20,
+                  fontWeight: FontWeight.bold),
+            ),
+            onTap: () {
+              sliderPageController.scrollTo(scrollController, skillsLocation!);
+              Navigator.pop(context);
+            },
+          ),
+          SizedBox(
+            width: size.width * 0.01,
+          ),
+          ListTile(
+            title: const Text(
               "Contact",
               style: TextStyle(
                   color: Colors.white,
                   fontSize: 20,
                   fontWeight: FontWeight.bold),
             ),
-            onTap: () {},
+            onTap: () {
+              sliderPageController.scrollTo(scrollController, contactLocation!);
+              Navigator.pop(context);
+            },
           ),
           SizedBox(
             width: size.width * 0.01,
