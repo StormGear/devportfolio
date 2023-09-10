@@ -35,3 +35,6 @@ const String postgresqlLogo = 'assets/logos/postgresql.svg';
 
 /// Arduino logo
 const String arduinoLogo = 'assets/logos/arduino.svg';
+
+/// Asustem logo
+const String asustemLogo = 'assets/logos/asustem.svg';

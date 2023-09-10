@@ -18,8 +18,6 @@ class SkillCategoryState extends State<SkillCategory> {
     final SliderPageController controller = SliderPageController.instance;
     return Container(
       decoration: const BoxDecoration(color: Colors.black),
-      // width: size.width,
-      // height: size.height * 0.2,
       child: Column(
         children: [
           const Center(
