@@ -21,7 +21,7 @@ class WorkAndEducation extends StatelessWidget {
             SizedBox(
               height: size.height * 0.02,
             ),
-            WorkCard(
+            WorkCardSmall(
               size: size,
               work: experiences[0],
             )
@@ -43,7 +43,7 @@ class WorkAndEducation extends StatelessWidget {
             SizedBox(
               height: size.height * 0.02,
             ),
-            WorkCard(
+            WorkCardSmall(
               size: size,
               work: experiences[0],
             )
@@ -52,30 +52,41 @@ class WorkAndEducation extends StatelessWidget {
       );
 
   // largescreen
-  Padding workExperienceLarge(Size size) => Padding(
-        padding: const EdgeInsets.only(left: 8.0),
+  Flexible workExperienceLarge(Size size) => Flexible(
+        // padding: const EdgeInsets.only(left: 8.0),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            const Center(
-              child: Text('Work Experience',
-                  textScaleFactor: 1.5,
-                  style: TextStyle(color: Colors.lightBlue)),
-            ),
+            const Text('Work Experience',
+                textScaleFactor: 1.5,
+                style: TextStyle(color: Colors.lightBlue)),
             SizedBox(
               height: size.height * 0.02,
             ),
             WorkCardLarge(
               size: size,
               work: experiences[0],
-            )
+            ),
+            SizedBox(
+              height: size.height * 0.02,
+            ),
+            WorkCardLarge(
+              size: size,
+              work: experiences[1],
+            ),
+            SizedBox(
+              height: size.height * 0.02,
+            ),
+            WorkCardLarge(
+              size: size,
+              work: experiences[2],
+            ),
           ],
         ),
       );
 
   // largescreen
-  Padding educationLarge(Size size) => Padding(
-        padding: const EdgeInsets.only(left: 8.0),
+  Flexible educationLarge(Size size) => Flexible(
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
@@ -112,12 +123,11 @@ class WorkAndEducation extends StatelessWidget {
     final Size size = MediaQuery.of(context).size;
     return ResponsiveWidget(
       largeScreen: Row(
-        // mainAxisAlignment: MainAxisAlignment.,
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           workExperienceLarge(size),
           SizedBox(
-            width: size.width * 0.03,
+            width: size.width * 0.05,
           ),
           educationLarge(size),
         ],

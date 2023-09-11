@@ -3,13 +3,17 @@ class WorkModel {
   final String period;
   final String? role;
   final String? description;
-  final String companyLogo;
+  final String? companyLogo;
+  final String? urlAuthority;
+  final String? urlPath;
 
   const WorkModel({
     required this.companyName,
     required this.period,
-    required this.companyLogo,
+    this.companyLogo,
     this.description,
     this.role,
+    this.urlAuthority,
+    this.urlPath,
   });
 }

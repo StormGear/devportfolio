@@ -9,10 +9,26 @@ import 'package:portfolio/strings/image_strings.dart';
 /// My work experience information
 final List<WorkModel> experiences = [
   const WorkModel(
-      companyName: "Asustem Robotics",
+      companyName: "Asustem Robotics/Lenovo",
       period: "July - August, 2023",
       companyLogo: 'assets/images/asustem.jpg',
-      role: "Robotics Instructor Intern"),
+      role: "Robotics/IoT Instructor Intern",
+      description:
+          "- Introducing and tutoring modules in Arduino\nprogramming to young and working adults.",
+      urlAuthority: "github.com",
+      urlPath: "/Boahen123"),
+  const WorkModel(
+      companyName: "Asustem Robotics",
+      period: "July - August, 2023",
+      role: "Robotics Instructor Intern",
+      urlAuthority: "github.com",
+      urlPath: "/Boahen123"),
+  const WorkModel(
+      companyName: "Asustem Robotics",
+      period: "July - August, 2023",
+      role: "Robotics Instructor Intern",
+      urlAuthority: "github.com",
+      urlPath: "/Boahen123"),
 ];
 
 /// My skills information

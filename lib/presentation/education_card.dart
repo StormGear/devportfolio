@@ -24,21 +24,23 @@ class EducationCard extends StatelessWidget {
       child: Card(
         color: Colors.transparent,
         child: Row(mainAxisAlignment: MainAxisAlignment.start, children: [
-          Container(
-            margin: EdgeInsets.only(
-              left: size.width * 0.02,
-            ),
-            decoration: BoxDecoration(
-                image: school.companyLogo == null
-                    ? null
-                    : DecorationImage(
-                        image: AssetImage("${school.companyLogo}"),
-                        fit: BoxFit.fill),
-                shape: BoxShape.circle),
-            width: size.width * 0.1,
-            height: size.width * 0.08,
-            child: const Text(''),
-          ),
+          school.companyLogo == null
+              ? const Text("")
+              : Container(
+                  margin: EdgeInsets.only(
+                    left: size.width * 0.02,
+                  ),
+                  decoration: BoxDecoration(
+                      image: school.companyLogo == null
+                          ? null
+                          : DecorationImage(
+                              image: AssetImage("${school.companyLogo}"),
+                              fit: BoxFit.fill),
+                      shape: BoxShape.circle),
+                  width: size.width * 0.1,
+                  height: size.width * 0.08,
+                  child: const Text(''),
+                ),
           SizedBox(
             width: size.width * 0.05,
           ),
