@@ -1,13 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:portfolio/strings/image_strings.dart';
-import 'package:portfolio/widgets/quick_contact.dart';
-import 'package:portfolio/widgets/responsive_widget.dart';
+import 'package:portfolio/services/responsive_widget.dart';
 import 'package:simple_icons/simple_icons.dart';
 import 'package:url_launcher/url_launcher.dart';
 
-class SocialInfo extends StatelessWidget {
-  const SocialInfo({super.key});
+class QuickContact extends StatelessWidget {
+  const QuickContact({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -78,16 +77,6 @@ class SocialInfo extends StatelessWidget {
           SizedBox(
             width: size.width * 0.30,
           ),
-          const Row(
-            children: [
-              Image(image: AssetImage(flutterLogo), height: 25.0, width: 25.0),
-              Text(
-                "made with flutter",
-                textScaleFactor: 0.8,
-                style: TextStyle(color: Colors.white),
-              ),
-            ],
-          ),
         ],
       ),
       smallScreen:
@@ -151,17 +140,28 @@ class SocialInfo extends StatelessWidget {
             ),
           ],
         ),
-        const Row(
-          children: [
-            Image(image: AssetImage(flutterLogo), height: 25.0, width: 25.0),
-            Text(
-              "made with flutter",
-              textScaleFactor: 0.8,
-              style: TextStyle(color: Colors.white),
-            ),
-          ],
-        ),
       ]),
     );
+  }
+}
+
+void launchEmailClient(String recipient) async {
+  String? encodeQueryParameters(Map<String, String> params) {
+    return params.entries
+        .map((MapEntry<String, String> e) =>
+            '${Uri.encodeComponent(e.key)}=${Uri.encodeComponent(e.value)}')
+        .join('&');
+  }
+
+  final Uri params = Uri(
+    scheme: 'mailto',
+    path: recipient,
+    query: encodeQueryParameters(<String, String>{'subject': 'Hello, '}),
+  );
+
+  if (await canLaunchUrl(params)) {
+    await launchUrl(params);
+  } else {
+    // console.d('Could not launch email client');
   }
 }

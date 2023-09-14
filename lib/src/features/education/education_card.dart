@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:portfolio/models/education_model.dart';
+import 'package:portfolio/services/launcher.dart';
+import 'package:portfolio/src/features/education/education_model.dart';
 
-class EducationCard extends StatelessWidget {
-  const EducationCard({
+class EducationCardLarge extends StatelessWidget {
+  const EducationCardLarge({
     super.key,
     required this.size,
     required this.school,
@@ -51,10 +52,20 @@ class EducationCard extends StatelessWidget {
               SizedBox(
                 height: size.height * 0.01,
               ),
-              Text(
-                school.schoolName,
-                textScaleFactor: 1.2,
-                style: const TextStyle(color: Colors.white),
+              TextButton(
+                onPressed: () async {
+                  if (school.urlAuthority != null && school.urlPath != null) {
+                    await Launcher.launch(
+                        school.urlAuthority, school.urlPath, school.secure);
+                  }
+                },
+                child: Text(
+                  school.schoolName,
+                  softWrap: true,
+                  textScaleFactor: 1.2,
+                  style: const TextStyle(
+                      color: Colors.lightBlue, fontWeight: FontWeight.bold),
+                ),
               ),
               Text(school.period,
                   textScaleFactor: 1,
@@ -62,11 +73,19 @@ class EducationCard extends StatelessWidget {
               SizedBox(
                 height: size.height * 0.01,
               ),
-              const Text("Activity",
-                  textScaleFactor: 0.9, style: TextStyle(color: Colors.white)),
-              // const Text('Role description',
-              //     textScaleFactor: 0.8,
-              //     style: TextStyle(color: Colors.white))
+              school.awards == true
+                  ? Column(
+                      children: [
+                        const Text("Awards",
+                            textScaleFactor: 0.9,
+                            style: TextStyle(color: Colors.white)),
+                        Text("${school.awardDescription}",
+                            textScaleFactor: 0.8,
+                            softWrap: true,
+                            style: const TextStyle(color: Colors.white))
+                      ],
+                    )
+                  : const Text("")
             ],
           )
         ]),

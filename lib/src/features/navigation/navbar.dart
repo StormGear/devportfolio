@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:portfolio/controllers/slider_page_controller.dart';
 // import 'package:portfolio/widgets/name.dart';
-import 'package:portfolio/widgets/navbutton.dart';
-import 'package:portfolio/widgets/responsive_widget.dart';
+import 'package:portfolio/src/features/navigation/navbutton.dart';
+import 'package:portfolio/services/responsive_widget.dart';
 
 class NavBar extends StatelessWidget {
   NavBar(

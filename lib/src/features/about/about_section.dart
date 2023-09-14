@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:portfolio/strings/image_strings.dart';
 import 'package:portfolio/strings/main_content.dart';
-import 'package:portfolio/widgets/responsive_widget.dart';
+import 'package:portfolio/services/responsive_widget.dart';
 
 class AboutSection extends StatelessWidget {
   const AboutSection({super.key});

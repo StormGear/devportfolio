@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:portfolio/models/work_model.dart';
+import 'package:portfolio/src/features/work/work_model.dart';
 import 'package:portfolio/services/launcher.dart';
 // import 'package:url_launcher/url_launcher.dart';
 
@@ -19,7 +19,6 @@ class WorkCardSmall extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      margin: EdgeInsets.all(size.width * 0.01),
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(15.0),
         color: Colors.transparent,
@@ -47,7 +46,7 @@ class WorkCardSmall extends StatelessWidget {
                   ),
                 ),
           SizedBox(
-            width: size.width * 0.15,
+            width: size.width * 0.03,
           ),
           Column(
             mainAxisAlignment: MainAxisAlignment.start,
@@ -70,9 +69,12 @@ class WorkCardSmall extends StatelessWidget {
               Text("${work.role}",
                   textScaleFactor: 0.9,
                   style: const TextStyle(color: Colors.white)),
-              // const Text('Role description',
-              //     textScaleFactor: 0.8,
-              //     style: TextStyle(color: Colors.white))
+              work.description == null
+                  ? const Text("")
+                  : Text("${work.description}",
+                      textScaleFactor: 0.8,
+                      softWrap: true,
+                      style: const TextStyle(color: Colors.white))
             ],
           )
         ]),
@@ -96,7 +98,9 @@ class WorkCardLarge extends StatelessWidget {
         border: Border.all(color: Colors.lightBlue),
       ),
       width: size.width * 0.6,
-      height: size.height * 0.4,
+      height: work.description == null || work.companyLogo == null
+          ? size.height * 0.2
+          : size.height * 0.4,
       child: Card(
         color: Colors.transparent,
         child: Row(mainAxisAlignment: MainAxisAlignment.start, children: [
@@ -127,7 +131,8 @@ class WorkCardLarge extends StatelessWidget {
               TextButton(
                 onPressed: () async {
                   if (work.urlAuthority != null && work.urlPath != null) {
-                    await Launcher.launch(work.urlAuthority, work.urlPath);
+                    await Launcher.launch(
+                        work.urlAuthority, work.urlPath, work.secure);
                   }
                 },
                 child: Text(
@@ -151,10 +156,12 @@ class WorkCardLarge extends StatelessWidget {
               SizedBox(
                 height: size.height * 0.01,
               ),
-              Text("${work.description}",
-                  textScaleFactor: 0.8,
-                  softWrap: true,
-                  style: const TextStyle(color: Colors.white))
+              work.description == null
+                  ? const Text("")
+                  : Text("${work.description}",
+                      textScaleFactor: 0.8,
+                      softWrap: true,
+                      style: const TextStyle(color: Colors.white))
             ],
           )
         ]),

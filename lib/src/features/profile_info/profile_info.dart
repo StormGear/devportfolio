@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:portfolio/strings/image_strings.dart';
 import 'package:portfolio/strings/main_content.dart';
-import 'package:portfolio/widgets/quick_contact.dart';
-import 'package:portfolio/widgets/responsive_widget.dart';
+import 'package:portfolio/src/features/contact/quick_contact.dart';
+import 'package:portfolio/services/responsive_widget.dart';
 
 class ProfileInfo extends StatelessWidget {
   const ProfileInfo({super.key});

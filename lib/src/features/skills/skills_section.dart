@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 // import 'package:flutter_svg/flutter_svg.dart';
-import 'package:portfolio/presentation/skill_category.dart';
-import 'package:portfolio/widgets/responsive_widget.dart';
+import 'package:portfolio/src/features/skills/skill_category.dart';
+import 'package:portfolio/services/responsive_widget.dart';
 
 class SkillSection extends StatefulWidget {
   const SkillSection({super.key});

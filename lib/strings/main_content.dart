@@ -6,4 +6,4 @@ const String about = "A Google Developer Student Club (GDSC) lead at "
     "development with flutter.\n";
 
 /// headline
-const String headline = "Flutter Developer || Computer Engineering Student \n";
+const String headline = "Mobile Developer || Computer Engineering Student \n";

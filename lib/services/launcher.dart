@@ -4,12 +4,22 @@ import 'package:url_launcher/url_launcher.dart';
 class Launcher {
   const Launcher();
 
-  static Future<void> launch(String? authority, String? path) async {
+  static Future<void> launch(
+      String? authority, String? path, bool? secure) async {
     final Uri url = Uri.https(authority!, path!);
-    if (await canLaunchUrl(url)) {
-      await launchUrl(url);
+    final Uri insecureUrl = Uri.http(authority, path);
+    if (secure == false) {
+      if (await canLaunchUrl(insecureUrl)) {
+        await launchUrl(insecureUrl);
+      } else {
+        Get.snackbar("Problem detected", "Could not launch URL.");
+      }
     } else {
-      Get.snackbar("Problem detected", "Could not launch URL.");
+      if (await canLaunchUrl(url)) {
+        await launchUrl(url);
+      } else {
+        Get.snackbar("Problem detected", "Could not launch URL.");
+      }
     }
   }
 

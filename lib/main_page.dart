@@ -1,16 +1,16 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:portfolio/controllers/slider_page_controller.dart';
-import 'package:portfolio/widgets/about_section.dart';
-import 'package:portfolio/widgets/name.dart';
-import 'package:portfolio/widgets/navbar.dart';
-import 'package:portfolio/widgets/profile_info.dart';
-import 'package:portfolio/widgets/responsive_widget.dart';
-import 'package:portfolio/widgets/skills_section.dart';
-import 'package:portfolio/widgets/social_info.dart';
-import 'package:portfolio/widgets/work_experience.dart';
-import '../presentation/skill_pages.dart';
-import '../widgets/menu_drawer.dart';
+import 'package:portfolio/src/features/about/about_section.dart';
+import 'package:portfolio/src/features/profile_info/name.dart';
+import 'package:portfolio/src/features/navigation/navbar.dart';
+import 'package:portfolio/src/features/profile_info/profile_info.dart';
+import 'package:portfolio/services/responsive_widget.dart';
+import 'package:portfolio/src/features/skills/skills_section.dart';
+import 'package:portfolio/src/features/contact/social_info.dart';
+import 'package:portfolio/src/features/work/work_experience.dart';
+import 'src/features/skills/skill_pages.dart';
+import 'src/features/navigation/menu_drawer.dart';
 
 class ProfilePage extends StatefulWidget {
   const ProfilePage({super.key});

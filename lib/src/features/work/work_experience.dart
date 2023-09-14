@@ -1,14 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:portfolio/data/information.dart';
-import 'package:portfolio/presentation/education_card.dart';
-import 'package:portfolio/presentation/work_card.dart';
-import 'package:portfolio/widgets/responsive_widget.dart';
+import 'package:portfolio/src/features/education/education_card.dart';
+import 'package:portfolio/src/features/work/work_card.dart';
+import 'package:portfolio/services/responsive_widget.dart';
 
 class WorkAndEducation extends StatelessWidget {
   const WorkAndEducation({super.key});
 
   // smallscreen
-  Padding workExperience(Size size) => Padding(
+  Padding workExperienceSmall(Size size) => Padding(
         padding: const EdgeInsets.only(left: 8.0),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
@@ -30,7 +30,7 @@ class WorkAndEducation extends StatelessWidget {
       );
 
   // smallscreen
-  Padding education(Size size) => Padding(
+  Padding educationSmall(Size size) => Padding(
         padding: const EdgeInsets.only(left: 8.0),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
@@ -43,45 +43,57 @@ class WorkAndEducation extends StatelessWidget {
             SizedBox(
               height: size.height * 0.02,
             ),
-            WorkCardSmall(
-              size: size,
-              work: experiences[0],
-            )
           ],
         ),
       );
 
   // largescreen
   Flexible workExperienceLarge(Size size) => Flexible(
-        // padding: const EdgeInsets.only(left: 8.0),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            const Text('Work Experience',
-                textScaleFactor: 1.5,
-                style: TextStyle(color: Colors.lightBlue)),
-            SizedBox(
-              height: size.height * 0.02,
-            ),
-            WorkCardLarge(
-              size: size,
-              work: experiences[0],
-            ),
-            SizedBox(
-              height: size.height * 0.02,
-            ),
-            WorkCardLarge(
-              size: size,
-              work: experiences[1],
-            ),
-            SizedBox(
-              height: size.height * 0.02,
-            ),
-            WorkCardLarge(
-              size: size,
-              work: experiences[2],
-            ),
-          ],
+        child: Padding(
+          padding: EdgeInsets.only(left: size.height * 0.06),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              const Text('Work Experience',
+                  textScaleFactor: 1.5,
+                  style: TextStyle(color: Colors.lightBlue)),
+              SizedBox(
+                height: size.height * 0.02,
+              ),
+              WorkCardLarge(
+                size: size,
+                work: experiences[0],
+              ),
+              SizedBox(
+                height: size.height * 0.02,
+              ),
+              WorkCardLarge(
+                size: size,
+                work: experiences[1],
+              ),
+              SizedBox(
+                height: size.height * 0.02,
+              ),
+              WorkCardLarge(
+                size: size,
+                work: experiences[2],
+              ),
+              SizedBox(
+                height: size.height * 0.02,
+              ),
+              WorkCardLarge(
+                size: size,
+                work: experiences[3],
+              ),
+              SizedBox(
+                height: size.height * 0.02,
+              ),
+              WorkCardLarge(
+                size: size,
+                work: experiences[4],
+              ),
+            ],
+          ),
         ),
       );
 
@@ -96,21 +108,21 @@ class WorkAndEducation extends StatelessWidget {
             SizedBox(
               height: size.height * 0.02,
             ),
-            EducationCard(
+            EducationCardLarge(
               size: size,
               school: schools[0],
             ),
             SizedBox(
               height: size.height * 0.02,
             ),
-            EducationCard(
+            EducationCardLarge(
               size: size,
               school: schools[1],
             ),
             SizedBox(
               height: size.height * 0.02,
             ),
-            EducationCard(
+            EducationCardLarge(
               size: size,
               school: schools[2],
             )
@@ -136,11 +148,11 @@ class WorkAndEducation extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           mainAxisSize: MainAxisSize.max,
           children: [
-            workExperience(size),
+            workExperienceSmall(size),
             SizedBox(
               height: size.height * 0.1,
             ),
-            education(size),
+            educationSmall(size),
           ]),
     );
   }

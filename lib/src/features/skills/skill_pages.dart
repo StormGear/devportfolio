@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:portfolio/controllers/slider_page_controller.dart';
 import 'package:portfolio/data/information.dart';
-import 'package:portfolio/widgets/non_tech.dart';
+import 'package:portfolio/src/features/skills/non_tech.dart';
 
 class SkillPages extends StatelessWidget {
   const SkillPages({

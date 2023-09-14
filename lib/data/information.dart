@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'package:portfolio/models/education_model.dart';
-import 'package:portfolio/models/skill_model.dart';
-import 'package:portfolio/models/work_model.dart';
+import 'package:portfolio/src/features/education/education_model.dart';
+import 'package:portfolio/src/features/skills/skill_model.dart';
+import 'package:portfolio/src/features/work/work_model.dart';
 // import 'package:portfolio/presentation/education_card.dart';
 import 'package:portfolio/strings/image_strings.dart';
 
@@ -15,20 +15,32 @@ final List<WorkModel> experiences = [
       role: "Robotics/IoT Instructor Intern",
       description:
           "- Introducing and tutoring modules in Arduino\nprogramming to young and working adults.",
-      urlAuthority: "github.com",
-      urlPath: "/Boahen123"),
+      urlAuthority: "asustemrobotics.org",
+      urlPath: "/index.html"),
   const WorkModel(
-      companyName: "Asustem Robotics",
-      period: "July - August, 2023",
-      role: "Robotics Instructor Intern",
-      urlAuthority: "github.com",
-      urlPath: "/Boahen123"),
+      companyName: "Google Developer Student Clubs - ACity",
+      period: "July 2023 - Present",
+      role: "GDSC Lead",
+      urlAuthority: "gdsc.community.dev",
+      urlPath: "/academic-city-university-college/"),
   const WorkModel(
-      companyName: "Asustem Robotics",
-      period: "July - August, 2023",
-      role: "Robotics Instructor Intern",
-      urlAuthority: "github.com",
-      urlPath: "/Boahen123"),
+      companyName: "Techten Planet GH",
+      period: "June - July 2023",
+      role: "Mobile Developer Intern",
+      urlAuthority: "techtenplanet.org",
+      urlPath: ""),
+  const WorkModel(
+      companyName: "BuildLab Africa",
+      period: "January - April 2023",
+      role: "Frontend Developer Intern",
+      urlAuthority: "buildlabafrica.org",
+      urlPath: ""),
+  const WorkModel(
+      companyName: "Datasus Technologies",
+      period: "December 2022 - Present",
+      role: "Social Media Manager",
+      urlAuthority: "linkedin.com",
+      urlPath: "/company/datasus-tech/"),
 ];
 
 /// My skills information
@@ -90,12 +102,22 @@ List<SkillModel> skills = [
 /// My education information
 List<EducationModel> schools = [
   const EducationModel(
-      schoolName: "Academic City University College",
-      period: "January 2021 - present",
-      companyLogo: "assets/logos/acity.png"),
+    schoolName: "Academic City University",
+    period: "January 2021 - present",
+    companyLogo: "assets/logos/acity.png",
+    course: "Computer Engineering",
+    urlAuthority: "acity.edu.gh",
+    urlPath: "",
+  ),
   const EducationModel(
-      schoolName: "Achimota School", period: "October 2018 - November 2021"),
+      schoolName: "Achimota School",
+      period: "October 2018 - November 2021",
+      awards: true,
+      urlAuthority: "en.wikipedia.org",
+      urlPath: "/wiki/Achimota_School"),
   const EducationModel(
       schoolName: "Rockies International School",
-      period: "October 2012 - June 2018"),
+      period: "March 2012 - June 2018",
+      urlAuthority: "ris.edu.gh",
+      urlPath: ""),
 ];

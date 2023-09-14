@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:portfolio/widgets/responsive_widget.dart';
+import 'package:portfolio/services/responsive_widget.dart';
 
 class NonTech extends StatelessWidget {
   const NonTech({

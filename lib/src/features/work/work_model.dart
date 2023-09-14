@@ -6,6 +6,7 @@ class WorkModel {
   final String? companyLogo;
   final String? urlAuthority;
   final String? urlPath;
+  final bool? secure;
 
   const WorkModel({
     required this.companyName,
@@ -15,5 +16,6 @@ class WorkModel {
     this.role,
     this.urlAuthority,
     this.urlPath,
+    this.secure,
   });
 }
