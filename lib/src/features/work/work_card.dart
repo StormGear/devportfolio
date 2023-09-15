@@ -25,7 +25,8 @@ class WorkCardSmall extends StatelessWidget {
         border: Border.all(color: Colors.lightBlue),
       ),
       width: width ?? size.width,
-      height: height ?? size.height * 0.2,
+      height: height ??
+          (work.description == null ? size.height * 0.15 : size.height * 0.2),
       child: Card(
         color: Colors.transparent,
         child: Row(mainAxisAlignment: MainAxisAlignment.start, children: [
@@ -55,10 +56,20 @@ class WorkCardSmall extends StatelessWidget {
               SizedBox(
                 height: size.height * 0.01,
               ),
-              Text(
-                work.companyName,
-                textScaleFactor: 1.2,
-                style: const TextStyle(color: Colors.white),
+              TextButton(
+                onPressed: () async {
+                  if (work.urlAuthority != null && work.urlPath != null) {
+                    await Launcher.launch(
+                        work.urlAuthority, work.urlPath, work.secure);
+                  }
+                },
+                child: Text(
+                  work.companyName,
+                  softWrap: true,
+                  textScaleFactor: 1.2,
+                  style: const TextStyle(
+                      color: Colors.lightBlue, fontWeight: FontWeight.bold),
+                ),
               ),
               Text(work.period,
                   textScaleFactor: 1,
@@ -71,10 +82,15 @@ class WorkCardSmall extends StatelessWidget {
                   style: const TextStyle(color: Colors.white)),
               work.description == null
                   ? const Text("")
-                  : Text("${work.description}",
-                      textScaleFactor: 0.8,
-                      softWrap: true,
-                      style: const TextStyle(color: Colors.white))
+                  : Wrap(direction: Axis.vertical, children: [
+                      Text("${work.description}",
+                          // textScaleFactor: 0.8,
+                          softWrap: true,
+                          overflow: TextOverflow.ellipsis,
+                          style: TextStyle(
+                              color: Colors.white,
+                              fontSize: size.width * 0.025)),
+                    ])
             ],
           )
         ]),

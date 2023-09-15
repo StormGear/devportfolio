@@ -114,7 +114,9 @@ List<EducationModel> schools = [
       period: "October 2018 - November 2021",
       awards: true,
       urlAuthority: "en.wikipedia.org",
-      urlPath: "/wiki/Achimota_School"),
+      urlPath: "/wiki/Achimota_School",
+      awardDescription:
+          "- Larry Cobbson's Award for the Best Student in Biology\n- The Sodokeh Families Award for Obtaining 7As"),
   const EducationModel(
       schoolName: "Rockies International School",
       period: "March 2012 - June 2018",

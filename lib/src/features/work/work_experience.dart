@@ -24,7 +24,35 @@ class WorkAndEducation extends StatelessWidget {
             WorkCardSmall(
               size: size,
               work: experiences[0],
-            )
+            ),
+            SizedBox(
+              height: size.height * 0.02,
+            ),
+            WorkCardSmall(
+              size: size,
+              work: experiences[1],
+            ),
+            SizedBox(
+              height: size.height * 0.02,
+            ),
+            WorkCardSmall(
+              size: size,
+              work: experiences[2],
+            ),
+            SizedBox(
+              height: size.height * 0.02,
+            ),
+            WorkCardSmall(
+              size: size,
+              work: experiences[3],
+            ),
+            SizedBox(
+              height: size.height * 0.02,
+            ),
+            WorkCardSmall(
+              size: size,
+              work: experiences[4],
+            ),
           ],
         ),
       );
@@ -42,6 +70,24 @@ class WorkAndEducation extends StatelessWidget {
             ),
             SizedBox(
               height: size.height * 0.02,
+            ),
+            EducationCardSmall(
+              size: size,
+              school: schools[0],
+            ),
+            SizedBox(
+              height: size.height * 0.02,
+            ),
+            EducationCardSmall(
+              size: size,
+              school: schools[1],
+            ),
+            SizedBox(
+              height: size.height * 0.02,
+            ),
+            EducationCardSmall(
+              size: size,
+              school: schools[2],
             ),
           ],
         ),
