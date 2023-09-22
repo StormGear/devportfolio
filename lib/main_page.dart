@@ -6,6 +6,7 @@ import 'package:portfolio/src/features/profile_info/name.dart';
 import 'package:portfolio/src/features/navigation/navbar.dart';
 import 'package:portfolio/src/features/profile_info/profile_info.dart';
 import 'package:portfolio/services/responsive_widget.dart';
+import 'package:portfolio/src/features/projects/project_section.dart';
 import 'package:portfolio/src/features/skills/skills_section.dart';
 import 'package:portfolio/src/features/contact/social_info.dart';
 import 'package:portfolio/src/features/work/work_experience.dart';
@@ -93,6 +94,10 @@ class _ProfilePageState extends State<ProfilePage> {
                           height: size.height * 0.05,
                         ),
                         const WorkAndEducation(),
+                        SizedBox(
+                          height: size.height * 0.05,
+                        ),
+                        const ProjectSection(),
                         const SocialInfo(),
                       ]),
                 ),

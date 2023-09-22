@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:portfolio/src/features/education/education_model.dart';
+import 'package:portfolio/src/features/projects/project_model.dart';
 import 'package:portfolio/src/features/skills/skill_model.dart';
 import 'package:portfolio/src/features/work/work_model.dart';
 // import 'package:portfolio/presentation/education_card.dart';
@@ -121,5 +122,21 @@ List<EducationModel> schools = [
       schoolName: "Rockies International School",
       period: "March 2012 - June 2018",
       urlAuthority: "ris.edu.gh",
+      urlPath: ""),
+];
+
+/// My projects information
+final List<ProjectModel> projects = [
+  ProjectModel(
+      projectName: "Covid-19 Tracker",
+      projectDescription:
+          "A mobile application that tracks the number of Covid-19 cases in Ghana and the world at large.",
+      urlAuthority: "",
+      urlPath: ""),
+  ProjectModel(
+      projectName: "Covid-19 Tracker",
+      projectDescription:
+          "A mobile application that tracks the number of Covid-19 cases in Ghana and the world at large.",
+      urlAuthority: "",
       urlPath: ""),
 ];
