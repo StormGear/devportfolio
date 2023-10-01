@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 // import 'package:get/get.dart';
 import 'package:portfolio/data/information.dart';
 
-class Projects extends StatelessWidget {
-  const Projects({super.key});
+class ProjectsLarge extends StatelessWidget {
+  const ProjectsLarge({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -17,8 +17,8 @@ class Projects extends StatelessWidget {
         height: size.height * 0.01,
       ),
       Container(
-        height: size.height * 0.3,
-        width: double.infinity,
+        height: size.height * 0.7,
+        // width: size.width * 0.2,
         decoration: const BoxDecoration(color: Colors.black),
         child: ListView.builder(
             itemCount: projects.length,
@@ -27,7 +27,7 @@ class Projects extends StatelessWidget {
             itemBuilder: (context, index) => Padding(
                   padding: const EdgeInsets.all(10.0),
                   child: Container(
-                      height: size.height * 0.3,
+                      width: size.width * 0.3,
                       decoration: BoxDecoration(
                         border: Border.all(color: Colors.lightBlue),
                         borderRadius: BorderRadius.circular(10),
@@ -36,12 +36,16 @@ class Projects extends StatelessWidget {
                       child: Column(
                         children: [
                           Container(
-                              decoration: BoxDecoration(
-                                border: Border.all(color: Colors.lightBlue),
-                                borderRadius: BorderRadius.circular(10),
-                              ),
-                              padding: const EdgeInsets.all(10),
-                              child: Image.asset("assets/logos/TaskBuddy.png")),
+                              padding: const EdgeInsets.all(8),
+                              child: AspectRatio(
+                                  aspectRatio: 12 / 5,
+                                  child: ClipRRect(
+                                    borderRadius: BorderRadius.circular(10),
+                                    child: Image.asset(
+                                      projects[index].image,
+                                      fit: BoxFit.fill,
+                                    ),
+                                  ))),
                           Text(
                             projects[index].projectName,
                             softWrap: true,
@@ -50,11 +54,13 @@ class Projects extends StatelessWidget {
                           SizedBox(
                             height: size.height * 0.01,
                           ),
-                          Text(
-                            projects[index].projectDescription,
-                            softWrap: true,
-                            style: const TextStyle(
-                              color: Colors.lightBlue,
+                          Flexible(
+                            child: Text(
+                              projects[index].projectDescription,
+                              softWrap: true,
+                              style: const TextStyle(
+                                color: Colors.lightBlue,
+                              ),
                             ),
                           ),
                           SizedBox(
