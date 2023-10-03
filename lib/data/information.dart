@@ -128,21 +128,21 @@ List<EducationModel> schools = [
 /// My projects information
 final List<ProjectModel> projects = [
   ProjectModel(
-      image: "assets/images/taskyy.png",
+      // image: "assets/images/taskyy.png",
       projectName: "World Time",
       projectDescription:
           "A mobile application that tracks the number of Covid-19 cases in Ghana and the world at large.",
       urlAuthority: "",
       urlPath: ""),
   ProjectModel(
-      image: "assets/images/id_card.png",
+      // image: "assets/images/id_card.png",
       projectName: "Covid-19 Tracker",
       projectDescription:
           "A mobile application that tracks the number of Covid-19 cases in Ghana and the world at large.",
       urlAuthority: "",
       urlPath: ""),
   ProjectModel(
-      image: "assets/images/world_time.png",
+      // image: "assets/images/world_time.png",
       projectName: "Covid-19 Tracker",
       projectDescription:
           "A mobile application that tracks the number of Covid-19 cases in Ghana and the world at large."
@@ -150,7 +150,7 @@ final List<ProjectModel> projects = [
       urlAuthority: "",
       urlPath: ""),
   ProjectModel(
-      image: "assets/images/qr_code_gen.png",
+      // image: "assets/images/qr_code_gen.png",
       projectName: "Covid-19 Tracker",
       projectDescription:
           "A mobile application that tracks the number of Covid-19 cases in Ghana and the world at large.",

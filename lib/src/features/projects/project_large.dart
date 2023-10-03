@@ -35,17 +35,18 @@ class ProjectsLarge extends StatelessWidget {
                       padding: const EdgeInsets.all(10),
                       child: Column(
                         children: [
-                          Container(
-                              padding: const EdgeInsets.all(8),
-                              child: AspectRatio(
-                                  aspectRatio: 12 / 5,
-                                  child: ClipRRect(
-                                    borderRadius: BorderRadius.circular(10),
-                                    child: Image.asset(
-                                      projects[index].image,
-                                      fit: BoxFit.fill,
-                                    ),
-                                  ))),
+                          if (projects[index].image != null)
+                            Container(
+                                padding: const EdgeInsets.all(8),
+                                child: AspectRatio(
+                                    aspectRatio: 12 / 5,
+                                    child: ClipRRect(
+                                      borderRadius: BorderRadius.circular(10),
+                                      child: Image.asset(
+                                        "${projects[index].image}",
+                                        fit: BoxFit.fill,
+                                      ),
+                                    ))),
                           Text(
                             projects[index].projectName,
                             softWrap: true,
