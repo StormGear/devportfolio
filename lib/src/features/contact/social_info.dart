@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:portfolio/widgets/responsive_widget.dart';
+import 'package:flutter_svg/flutter_svg.dart';
+import 'package:portfolio/strings/image_strings.dart';
+import 'package:portfolio/src/features/contact/quick_contact.dart';
+import 'package:portfolio/services/responsive_widget.dart';
 import 'package:simple_icons/simple_icons.dart';
 import 'package:url_launcher/url_launcher.dart';
 
@@ -16,6 +19,16 @@ class SocialInfo extends StatelessWidget {
           Row(
             mainAxisAlignment: MainAxisAlignment.start,
             children: [
+              IconButton(
+                onPressed: () async {
+                  launchEmailClient("papakofiboahen@gmail.com");
+                },
+                icon: SvgPicture.asset(
+                  gmailLogo,
+                  height: 35,
+                ),
+                alignment: Alignment.centerLeft,
+              ),
               IconButton(
                 onPressed: () async {
                   var url = Uri.https('github.com', '/Boahen123');
@@ -67,13 +80,10 @@ class SocialInfo extends StatelessWidget {
           ),
           const Row(
             children: [
-              Image(
-                  image: AssetImage('assets/flutter.png'),
-                  height: 35.0,
-                  width: 35.0),
+              Image(image: AssetImage(flutterLogo), height: 25.0, width: 25.0),
               Text(
-                "made with Flutter",
-                textScaleFactor: 1,
+                "made with flutter",
+                textScaleFactor: 0.8,
                 style: TextStyle(color: Colors.white),
               ),
             ],
@@ -85,6 +95,16 @@ class SocialInfo extends StatelessWidget {
         Row(
           // mainAxisAlignment: MainAxisAlignment.start,
           children: [
+            IconButton(
+              onPressed: () async {
+                launchEmailClient("papakofiboahen@gmail.com");
+              },
+              icon: SvgPicture.asset(
+                gmailLogo,
+                height: 35,
+              ),
+              alignment: Alignment.centerLeft,
+            ),
             IconButton(
               onPressed: () async {
                 var url = Uri.https('github.com', '/Boahen123');
@@ -133,13 +153,10 @@ class SocialInfo extends StatelessWidget {
         ),
         const Row(
           children: [
-            Image(
-                image: AssetImage('assets/flutter.png'),
-                height: 35.0,
-                width: 35.0),
+            Image(image: AssetImage(flutterLogo), height: 25.0, width: 25.0),
             Text(
-              "Made with Flutter",
-              textScaleFactor: 1,
+              "made with flutter",
+              textScaleFactor: 0.8,
               style: TextStyle(color: Colors.white),
             ),
           ],
