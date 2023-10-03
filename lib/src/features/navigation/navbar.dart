@@ -9,11 +9,17 @@ class NavBar extends StatelessWidget {
       {super.key,
       this.contactLocation,
       this.skillsLocation,
-      this.aboutLocation});
+      this.aboutLocation,
+      this.educationLocation,
+      this.workLocation,
+      this.projectsLocation});
 
   final double? contactLocation;
   final double? skillsLocation;
   final double? aboutLocation;
+  final double? workLocation;
+  final double? educationLocation;
+  final double? projectsLocation;
 
   final ScrollController scrollController =
       SliderPageController.instance.scrollController;
@@ -58,6 +64,26 @@ class NavBar extends StatelessWidget {
                 onPressed: () {
                   sliderPageController.scrollTo(
                       scrollController, contactLocation!);
+                },
+              ),
+            ),
+            Padding(
+              padding: const EdgeInsets.only(right: 8.0),
+              child: NavButton(
+                text: "Work",
+                onPressed: () {
+                  sliderPageController.scrollTo(
+                      scrollController, workLocation!);
+                },
+              ),
+            ),
+            Padding(
+              padding: const EdgeInsets.only(right: 8.0),
+              child: NavButton(
+                text: "Projects",
+                onPressed: () {
+                  sliderPageController.scrollTo(
+                      scrollController, projectsLocation!);
                 },
               ),
             ),

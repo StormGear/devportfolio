@@ -25,8 +25,11 @@ class _ProfilePageState extends State<ProfilePage> {
   Widget build(BuildContext context) {
     final Size size = MediaQuery.of(context).size;
     const double aboutLocation = 400;
-    const double skillsLocation = 900;
-    const double contactLocation = 1000;
+    const double skillsLocation = 800;
+    const double workLocation = 1000;
+    // const double educationLocation = 900;
+    const double projectsLocation = 1600;
+    const double contactsLocation = 1900;
     final GlobalKey aboutKey = GlobalKey();
 
     Get.put<SliderPageController>(SliderPageController());
@@ -37,7 +40,7 @@ class _ProfilePageState extends State<ProfilePage> {
           drawer: ResponsiveWidget.isSmallScreen(context)
               ? MenuDrawer(
                   size: size,
-                  contactLocation: contactLocation,
+                  contactLocation: contactsLocation,
                   aboutLocation: aboutLocation,
                   skillsLocation: skillsLocation,
                 )
@@ -59,7 +62,9 @@ class _ProfilePageState extends State<ProfilePage> {
                     NavBar(
                       aboutLocation: aboutLocation,
                       skillsLocation: skillsLocation,
-                      contactLocation: contactLocation,
+                      contactLocation: contactsLocation,
+                      workLocation: workLocation,
+                      projectsLocation: projectsLocation,
                     )
                   ],
                 ),
