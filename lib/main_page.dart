@@ -74,7 +74,7 @@ class _ProfilePageState extends State<ProfilePage> {
               controller: SliderPageController.instance.scrollController,
               child: AnimatedPadding(
                 duration: const Duration(seconds: 1),
-                padding: EdgeInsets.all(size.height * 0.01),
+                padding: EdgeInsets.all(size.height * 0.0001),
                 child: ResponsiveWidget(
                   largeScreen: Column(
                       mainAxisAlignment: MainAxisAlignment.start,
