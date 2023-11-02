@@ -27,73 +27,76 @@ class WorkCardSmall extends StatelessWidget {
       width: width ?? size.width,
       height: height ??
           (work.description == null ? size.height * 0.15 : size.height * 0.2),
-      child: Card(
-        color: Colors.transparent,
-        child: Row(mainAxisAlignment: MainAxisAlignment.start, children: [
-          work.companyLogo == null
-              ? const Text('')
-              : Padding(
-                  padding: EdgeInsets.only(left: size.width * 0.02),
-                  child: Container(
-                    decoration: BoxDecoration(
-                        image: work.companyLogo == null
-                            ? null
-                            : DecorationImage(
-                                image: AssetImage(work.companyLogo!),
-                                fit: BoxFit.fill),
-                        shape: BoxShape.circle),
-                    width: width ?? size.width * 0.25,
-                    height: height ?? size.width * 0.25,
+      child: FittedBox(
+        alignment: Alignment.centerLeft,
+        child: Card(
+          color: Colors.transparent,
+          child: Row(mainAxisAlignment: MainAxisAlignment.start, children: [
+            work.companyLogo == null
+                ? const Text('')
+                : Padding(
+                    padding: EdgeInsets.only(left: size.width * 0.02),
+                    child: Container(
+                      decoration: BoxDecoration(
+                          image: work.companyLogo == null
+                              ? null
+                              : DecorationImage(
+                                  image: AssetImage(work.companyLogo!),
+                                  fit: BoxFit.fill),
+                          shape: BoxShape.circle),
+                      width: width ?? size.width * 0.25,
+                      height: height ?? size.width * 0.25,
+                    ),
+                  ),
+            SizedBox(
+              width: size.width * 0.03,
+            ),
+            Column(
+              mainAxisAlignment: MainAxisAlignment.start,
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                SizedBox(
+                  height: size.height * 0.01,
+                ),
+                TextButton(
+                  onPressed: () async {
+                    if (work.urlAuthority != null && work.urlPath != null) {
+                      await Launcher.launch(
+                          work.urlAuthority, work.urlPath, work.secure);
+                    }
+                  },
+                  child: Text(
+                    work.companyName,
+                    softWrap: true,
+                    textScaleFactor: 1.2,
+                    style: const TextStyle(
+                        color: Colors.lightBlue, fontWeight: FontWeight.bold),
                   ),
                 ),
-          SizedBox(
-            width: size.width * 0.03,
-          ),
-          Column(
-            mainAxisAlignment: MainAxisAlignment.start,
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              SizedBox(
-                height: size.height * 0.01,
-              ),
-              TextButton(
-                onPressed: () async {
-                  if (work.urlAuthority != null && work.urlPath != null) {
-                    await Launcher.launch(
-                        work.urlAuthority, work.urlPath, work.secure);
-                  }
-                },
-                child: Text(
-                  work.companyName,
-                  softWrap: true,
-                  textScaleFactor: 1.2,
-                  style: const TextStyle(
-                      color: Colors.lightBlue, fontWeight: FontWeight.bold),
+                Text(work.period,
+                    textScaleFactor: 1,
+                    style: const TextStyle(color: Colors.white)),
+                SizedBox(
+                  height: size.height * 0.01,
                 ),
-              ),
-              Text(work.period,
-                  textScaleFactor: 1,
-                  style: const TextStyle(color: Colors.white)),
-              SizedBox(
-                height: size.height * 0.01,
-              ),
-              Text("${work.role}",
-                  textScaleFactor: 0.9,
-                  style: const TextStyle(color: Colors.white)),
-              work.description == null
-                  ? const Text("")
-                  : Wrap(direction: Axis.vertical, children: [
-                      Text("${work.description}",
-                          // textScaleFactor: 0.8,
-                          softWrap: true,
-                          overflow: TextOverflow.ellipsis,
-                          style: TextStyle(
-                              color: Colors.white,
-                              fontSize: size.width * 0.025)),
-                    ])
-            ],
-          )
-        ]),
+                Text("${work.role}",
+                    textScaleFactor: 0.9,
+                    style: const TextStyle(color: Colors.white)),
+                work.description == null
+                    ? const Text("")
+                    : Wrap(direction: Axis.vertical, children: [
+                        Text("${work.description}",
+                            // textScaleFactor: 0.8,
+                            softWrap: true,
+                            overflow: TextOverflow.ellipsis,
+                            style: TextStyle(
+                                color: Colors.white,
+                                fontSize: size.width * 0.025)),
+                      ])
+              ],
+            )
+          ]),
+        ),
       ),
     );
   }

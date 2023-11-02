@@ -120,76 +120,79 @@ class EducationCardSmall extends StatelessWidget {
               ? size.height * 0.12
               : size.height * 0.15
           : size.height * 0.2),
-      child: Card(
-        color: Colors.transparent,
-        child: Row(mainAxisAlignment: MainAxisAlignment.start, children: [
-          school.companyLogo == null
-              ? const Text("")
-              : Container(
-                  margin: EdgeInsets.only(
-                    left: size.width * 0.02,
+      child: FittedBox(
+        alignment: Alignment.centerLeft,
+        child: Card(
+          color: Colors.transparent,
+          child: Row(mainAxisAlignment: MainAxisAlignment.start, children: [
+            school.companyLogo == null
+                ? const Text("")
+                : Container(
+                    margin: EdgeInsets.only(
+                      left: size.width * 0.02,
+                    ),
+                    decoration: BoxDecoration(
+                        image: school.companyLogo == null
+                            ? null
+                            : DecorationImage(
+                                image: AssetImage("${school.companyLogo}"),
+                                fit: BoxFit.fill),
+                        shape: BoxShape.circle),
+                    width: size.width * 0.25,
+                    height: size.width * 0.2,
+                    child: const Text(''),
                   ),
-                  decoration: BoxDecoration(
-                      image: school.companyLogo == null
-                          ? null
-                          : DecorationImage(
-                              image: AssetImage("${school.companyLogo}"),
-                              fit: BoxFit.fill),
-                      shape: BoxShape.circle),
-                  width: size.width * 0.25,
-                  height: size.width * 0.2,
-                  child: const Text(''),
+            SizedBox(
+              width: size.width * 0.05,
+            ),
+            Column(
+              mainAxisAlignment: MainAxisAlignment.start,
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                SizedBox(
+                  height: size.height * 0.01,
                 ),
-          SizedBox(
-            width: size.width * 0.05,
-          ),
-          Column(
-            mainAxisAlignment: MainAxisAlignment.start,
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              SizedBox(
-                height: size.height * 0.01,
-              ),
-              TextButton(
-                onPressed: () async {
-                  if (school.urlAuthority != null && school.urlPath != null) {
-                    await Launcher.launch(
-                        school.urlAuthority, school.urlPath, school.secure);
-                  }
-                },
-                child: Text(
-                  school.schoolName,
-                  softWrap: true,
-                  textScaleFactor: 1.2,
-                  style: const TextStyle(
-                      color: Colors.lightBlue, fontWeight: FontWeight.bold),
+                TextButton(
+                  onPressed: () async {
+                    if (school.urlAuthority != null && school.urlPath != null) {
+                      await Launcher.launch(
+                          school.urlAuthority, school.urlPath, school.secure);
+                    }
+                  },
+                  child: Text(
+                    school.schoolName,
+                    softWrap: true,
+                    textScaleFactor: 1.2,
+                    style: const TextStyle(
+                        color: Colors.lightBlue, fontWeight: FontWeight.bold),
+                  ),
                 ),
-              ),
-              Text(school.period,
-                  textScaleFactor: 1,
-                  style: const TextStyle(color: Colors.white)),
-              school.awards == true
-                  ? Column(
-                      children: [
-                        SizedBox(
-                          height: size.height * 0.01,
-                        ),
-                        const Text("Awards",
-                            textScaleFactor: 0.9,
-                            style: TextStyle(color: Colors.white)),
-                        SizedBox(
-                          height: size.height * 0.01,
-                        ),
-                        Text("${school.awardDescription}",
-                            textScaleFactor: 0.8,
-                            softWrap: true,
-                            style: const TextStyle(color: Colors.white))
-                      ],
-                    )
-                  : const Text("")
-            ],
-          )
-        ]),
+                Text(school.period,
+                    textScaleFactor: 1,
+                    style: const TextStyle(color: Colors.white)),
+                school.awards == true
+                    ? Column(
+                        children: [
+                          SizedBox(
+                            height: size.height * 0.01,
+                          ),
+                          const Text("Awards",
+                              textScaleFactor: 0.9,
+                              style: TextStyle(color: Colors.white)),
+                          SizedBox(
+                            height: size.height * 0.01,
+                          ),
+                          Text("${school.awardDescription}",
+                              textScaleFactor: 0.8,
+                              softWrap: true,
+                              style: const TextStyle(color: Colors.white))
+                        ],
+                      )
+                    : const Text("")
+              ],
+            )
+          ]),
+        ),
       ),
     );
   }
