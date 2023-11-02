@@ -46,69 +46,68 @@ class _ProfilePageState extends State<ProfilePage> {
                 )
               : null,
           body: NestedScrollView(
-            // controller: scroller,
-            headerSliverBuilder:
-                (BuildContext context, bool innerBoxIsScrolled) {
-              // Customize your header here if needed.
-              return <Widget>[
-                SliverAppBar(
-                  title: const Papa(),
-                  pinned: true, // The app bar remains visible when scrolling.
-                  iconTheme: const IconThemeData(
-                    color: Colors.white,
+              // controller: scroller,
+              headerSliverBuilder:
+                  (BuildContext context, bool innerBoxIsScrolled) {
+                // Customize your header here if needed.
+                return <Widget>[
+                  SliverAppBar(
+                    title: const Papa(),
+                    pinned: true, // The app bar remains visible when scrolling.
+                    iconTheme: const IconThemeData(
+                      color: Colors.white,
+                    ),
+                    backgroundColor: Colors.black,
+                    actions: [
+                      NavBar(
+                        aboutLocation: aboutLocation,
+                        skillsLocation: skillsLocation,
+                        contactLocation: contactsLocation,
+                        workLocation: workLocation,
+                        projectsLocation: projectsLocation,
+                      )
+                    ],
                   ),
-                  backgroundColor: Colors.black,
-                  actions: [
-                    NavBar(
-                      aboutLocation: aboutLocation,
-                      skillsLocation: skillsLocation,
-                      contactLocation: contactsLocation,
-                      workLocation: workLocation,
-                      projectsLocation: projectsLocation,
-                    )
-                  ],
+                ];
+              },
+              body: SingleChildScrollView(
+                controller: SliderPageController.instance.scrollController,
+                child: AnimatedPadding(
+                  duration: const Duration(seconds: 1),
+                  padding: EdgeInsets.all(size.height * 0.0001),
+                  child: ResponsiveWidget(
+                    largeScreen: Column(
+                        mainAxisAlignment: MainAxisAlignment.start,
+                        children: [
+                          SizedBox(
+                            height: size.height * 0.05,
+                          ),
+                          const ProfileInfo(),
+                          SizedBox(
+                            height: size.height * 0.1,
+                          ),
+                          AboutSection(
+                            key: aboutKey,
+                          ),
+                          SizedBox(
+                            height: size.height * 0.08,
+                          ),
+                          const SkillSection(),
+                          // Add the PageView with horizontal scroll.
+                          const SkillPages(),
+                          SizedBox(
+                            height: size.height * 0.05,
+                          ),
+                          const WorkAndEducation(),
+                          SizedBox(
+                            height: size.height * 0.05,
+                          ),
+                          const ProjectSection(),
+                          const SocialInfo(),
+                        ]),
+                  ),
                 ),
-              ];
-            },
-            body: SingleChildScrollView(
-              controller: SliderPageController.instance.scrollController,
-              child: AnimatedPadding(
-                duration: const Duration(seconds: 1),
-                padding: EdgeInsets.all(size.height * 0.01),
-                child: ResponsiveWidget(
-                  largeScreen: Column(
-                      mainAxisAlignment: MainAxisAlignment.start,
-                      children: [
-                        SizedBox(
-                          height: size.height * 0.05,
-                        ),
-                        const ProfileInfo(),
-                        SizedBox(
-                          height: size.height * 0.1,
-                        ),
-                        AboutSection(
-                          key: aboutKey,
-                        ),
-                        SizedBox(
-                          height: size.height * 0.08,
-                        ),
-                        const SkillSection(),
-                        // Add the PageView with horizontal scroll.
-                        const SkillPages(),
-                        SizedBox(
-                          height: size.height * 0.05,
-                        ),
-                        const WorkAndEducation(),
-                        SizedBox(
-                          height: size.height * 0.05,
-                        ),
-                        const ProjectSection(),
-                        const SocialInfo(),
-                      ]),
-                ),
-              ),
-            ),
-          )),
+              ))),
     );
   }
 }

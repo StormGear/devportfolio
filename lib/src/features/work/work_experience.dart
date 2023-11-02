@@ -7,7 +7,7 @@ import 'package:portfolio/services/responsive_widget.dart';
 class WorkAndEducation extends StatelessWidget {
   const WorkAndEducation({super.key});
 
-  // smallscreen
+  // work experience on smallscreen
   Padding workExperienceSmall(Size size) => Padding(
         padding: const EdgeInsets.only(left: 8.0),
         child: Column(
@@ -18,46 +18,29 @@ class WorkAndEducation extends StatelessWidget {
                   textScaleFactor: 1.5,
                   style: TextStyle(color: Colors.lightBlue)),
             ),
-            SizedBox(
-              height: size.height * 0.02,
-            ),
-            WorkCardSmall(
-              size: size,
-              work: experiences[0],
-            ),
-            SizedBox(
-              height: size.height * 0.02,
-            ),
-            WorkCardSmall(
-              size: size,
-              work: experiences[1],
-            ),
-            SizedBox(
-              height: size.height * 0.02,
-            ),
-            WorkCardSmall(
-              size: size,
-              work: experiences[2],
-            ),
-            SizedBox(
-              height: size.height * 0.02,
-            ),
-            WorkCardSmall(
-              size: size,
-              work: experiences[3],
-            ),
-            SizedBox(
-              height: size.height * 0.02,
-            ),
-            WorkCardSmall(
-              size: size,
-              work: experiences[4],
+            ListView.builder(
+              shrinkWrap: true,
+              physics: const ClampingScrollPhysics(),
+              itemCount: experiences.length,
+              itemBuilder: (context, index) {
+                return Column(
+                  children: [
+                    SizedBox(
+                      height: size.height * 0.02,
+                    ),
+                    WorkCardSmall(
+                      size: size,
+                      work: experiences[index],
+                    ),
+                  ],
+                );
+              },
             ),
           ],
         ),
       );
 
-  // smallscreen
+  // education on smallscreen
   Padding educationSmall(Size size) => Padding(
         padding: const EdgeInsets.only(left: 8.0),
         child: Column(
@@ -68,32 +51,29 @@ class WorkAndEducation extends StatelessWidget {
                   textScaleFactor: 1.5,
                   style: TextStyle(color: Colors.lightBlue)),
             ),
-            SizedBox(
-              height: size.height * 0.02,
-            ),
-            EducationCardSmall(
-              size: size,
-              school: schools[0],
-            ),
-            SizedBox(
-              height: size.height * 0.02,
-            ),
-            EducationCardSmall(
-              size: size,
-              school: schools[1],
-            ),
-            SizedBox(
-              height: size.height * 0.02,
-            ),
-            EducationCardSmall(
-              size: size,
-              school: schools[2],
+            ListView.builder(
+              shrinkWrap: true,
+              physics: const ClampingScrollPhysics(),
+              itemCount: schools.length,
+              itemBuilder: (context, index) {
+                return Column(
+                  children: [
+                    SizedBox(
+                      height: size.height * 0.02,
+                    ),
+                    EducationCardSmall(
+                      size: size,
+                      school: schools[index],
+                    ),
+                  ],
+                );
+              },
             ),
           ],
         ),
       );
 
-  // largescreen
+  // work experience on largescreen
   Flexible workExperienceLarge(Size size) => Flexible(
         child: Padding(
           padding: EdgeInsets.only(left: size.height * 0.06),
@@ -103,47 +83,30 @@ class WorkAndEducation extends StatelessWidget {
               const Text('Work Experience',
                   textScaleFactor: 1.5,
                   style: TextStyle(color: Colors.lightBlue)),
-              SizedBox(
-                height: size.height * 0.02,
-              ),
-              WorkCardLarge(
-                size: size,
-                work: experiences[0],
-              ),
-              SizedBox(
-                height: size.height * 0.02,
-              ),
-              WorkCardLarge(
-                size: size,
-                work: experiences[1],
-              ),
-              SizedBox(
-                height: size.height * 0.02,
-              ),
-              WorkCardLarge(
-                size: size,
-                work: experiences[2],
-              ),
-              SizedBox(
-                height: size.height * 0.02,
-              ),
-              WorkCardLarge(
-                size: size,
-                work: experiences[3],
-              ),
-              SizedBox(
-                height: size.height * 0.02,
-              ),
-              WorkCardLarge(
-                size: size,
-                work: experiences[4],
+              ListView.builder(
+                shrinkWrap: true,
+                physics: const ClampingScrollPhysics(),
+                itemCount: experiences.length,
+                itemBuilder: (context, index) {
+                  return Column(
+                    children: [
+                      SizedBox(
+                        height: size.height * 0.02,
+                      ),
+                      WorkCardLarge(
+                        size: size,
+                        work: experiences[index],
+                      ),
+                    ],
+                  );
+                },
               ),
             ],
           ),
         ),
       );
 
-  // largescreen
+  // education on largescreen
   Flexible educationLarge(Size size) => Flexible(
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
@@ -151,27 +114,24 @@ class WorkAndEducation extends StatelessWidget {
             const Text('Education',
                 textScaleFactor: 1.5,
                 style: TextStyle(color: Colors.lightBlue)),
-            SizedBox(
-              height: size.height * 0.02,
+            ListView.builder(
+              shrinkWrap: true,
+              physics: const ClampingScrollPhysics(),
+              itemCount: schools.length,
+              itemBuilder: (context, index) {
+                return Column(
+                  children: [
+                    SizedBox(
+                      height: size.height * 0.02,
+                    ),
+                    EducationCardLarge(
+                      size: size,
+                      school: schools[0],
+                    ),
+                  ],
+                );
+              },
             ),
-            EducationCardLarge(
-              size: size,
-              school: schools[0],
-            ),
-            SizedBox(
-              height: size.height * 0.02,
-            ),
-            EducationCardLarge(
-              size: size,
-              school: schools[1],
-            ),
-            SizedBox(
-              height: size.height * 0.02,
-            ),
-            EducationCardLarge(
-              size: size,
-              school: schools[2],
-            )
           ],
         ),
       );
