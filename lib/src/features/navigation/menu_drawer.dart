@@ -7,11 +7,11 @@ class MenuDrawer extends StatelessWidget {
     super.key,
     required this.size,
     this.aboutLocation,
-    this.contactLocation,
+    this.workLocation,
     this.skillsLocation,
   });
 
-  final double? contactLocation;
+  final double? workLocation;
   final double? skillsLocation;
   final double? aboutLocation;
   final Size size;
@@ -61,14 +61,14 @@ class MenuDrawer extends StatelessWidget {
           ),
           ListTile(
             title: const Text(
-              "Contact",
+              "Work",
               style: TextStyle(
                   color: Colors.white,
                   fontSize: 20,
                   fontWeight: FontWeight.bold),
             ),
             onTap: () {
-              sliderPageController.scrollTo(scrollController, contactLocation!);
+              sliderPageController.scrollTo(scrollController, workLocation!);
               Navigator.pop(context);
             },
           ),

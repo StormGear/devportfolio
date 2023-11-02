@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 // import 'package:get/get.dart';
 import 'package:portfolio/data/information.dart';
+import 'package:portfolio/services/launcher.dart';
 
 class ProjectsLarge extends StatelessWidget {
   const ProjectsLarge({super.key});
@@ -17,8 +18,7 @@ class ProjectsLarge extends StatelessWidget {
         height: size.height * 0.01,
       ),
       Container(
-        height: size.height * 0.7,
-        // width: size.width * 0.2,
+        height: size.height * 0.5,
         decoration: const BoxDecoration(color: Colors.black),
         child: ListView.builder(
             itemCount: projects.length,
@@ -26,49 +26,72 @@ class ProjectsLarge extends StatelessWidget {
             scrollDirection: Axis.horizontal,
             itemBuilder: (context, index) => Padding(
                   padding: const EdgeInsets.all(10.0),
-                  child: Container(
-                      width: size.width * 0.3,
-                      decoration: BoxDecoration(
-                        border: Border.all(color: Colors.lightBlue),
-                        borderRadius: BorderRadius.circular(10),
-                      ),
-                      padding: const EdgeInsets.all(10),
-                      child: Column(
-                        children: [
-                          if (projects[index].image != null)
-                            Container(
-                                padding: const EdgeInsets.all(8),
-                                child: AspectRatio(
-                                    aspectRatio: 12 / 5,
-                                    child: ClipRRect(
-                                      borderRadius: BorderRadius.circular(10),
-                                      child: Image.asset(
-                                        "${projects[index].image}",
-                                        fit: BoxFit.fill,
-                                      ),
-                                    ))),
-                          Text(
-                            projects[index].projectName,
-                            softWrap: true,
-                            style: const TextStyle(color: Colors.lightBlue),
-                          ),
-                          SizedBox(
-                            height: size.height * 0.01,
-                          ),
-                          Flexible(
-                            child: Text(
-                              projects[index].projectDescription,
-                              softWrap: true,
-                              style: const TextStyle(
-                                color: Colors.lightBlue,
+                  child: FittedBox(
+                    alignment: Alignment.topCenter,
+                    child: Container(
+                        width: size.width * 0.2,
+                        decoration: BoxDecoration(
+                          border: Border.all(color: Colors.lightBlue),
+                          borderRadius: BorderRadius.circular(10),
+                        ),
+                        padding: const EdgeInsets.all(10),
+                        child: Column(
+                          children: [
+                            projects[index].image == null
+                                ? const SizedBox()
+                                : Container(
+                                    padding: const EdgeInsets.all(8),
+                                    child: AspectRatio(
+                                        aspectRatio: 12 / 5,
+                                        child: ClipRRect(
+                                          borderRadius:
+                                              BorderRadius.circular(10),
+                                          child: Image.asset(
+                                            "${projects[index].image}",
+                                            fit: BoxFit.fill,
+                                          ),
+                                        ))),
+                            projects[index].image == null
+                                ? const SizedBox(
+                                    height: 20,
+                                  )
+                                : const SizedBox(),
+                            TextButton(
+                              onPressed: () async {
+                                if (projects[index].urlAuthority != null &&
+                                    projects[index].urlPath != null) {
+                                  await Launcher.launch(
+                                      projects[index].urlAuthority,
+                                      projects[index].urlPath,
+                                      true);
+                                }
+                              },
+                              child: Text(
+                                projects[index].projectName,
+                                softWrap: true,
+                                textScaleFactor: 0.8,
+                                style: const TextStyle(
+                                    color: Colors.lightBlue,
+                                    fontWeight: FontWeight.bold),
                               ),
                             ),
-                          ),
-                          SizedBox(
-                            height: size.height * 0.01,
-                          ),
-                        ],
-                      )),
+                            SizedBox(
+                              height: size.height * 0.01,
+                            ),
+                            Text(
+                              projects[index].projectDescription,
+                              softWrap: true,
+                              textScaleFactor: 0.6,
+                              style: const TextStyle(
+                                color: Colors.white,
+                              ),
+                            ),
+                            SizedBox(
+                              height: size.height * 0.01,
+                            ),
+                          ],
+                        )),
+                  ),
                 )),
       )
     ]);

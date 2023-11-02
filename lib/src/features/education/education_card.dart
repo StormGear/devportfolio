@@ -28,7 +28,7 @@ class EducationCardLarge extends StatelessWidget {
         color: Colors.transparent,
         child: Row(mainAxisAlignment: MainAxisAlignment.start, children: [
           school.companyLogo == null
-              ? const Text("")
+              ? const SizedBox()
               : Container(
                   margin: EdgeInsets.only(
                     left: size.width * 0.02,
@@ -109,6 +109,8 @@ class EducationCardSmall extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
+      margin:
+          EdgeInsets.only(left: size.width * 0.02, right: size.width * 0.02),
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(15.0),
         color: Colors.transparent,

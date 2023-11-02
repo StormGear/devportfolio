@@ -129,38 +129,36 @@ List<EducationModel> schools = [
 final List<ProjectModel> projects = [
   ProjectModel(
       // image: "assets/images/taskyy.png",
-      projectName: "World Time",
-      projectDescription:
-          "A mobile application that tracks the number of Covid-19 cases in Ghana and the world at large.",
-      urlAuthority: "",
-      urlPath: ""),
+      projectName: "Taskyy",
+      projectDescription: "A minimalistic to-do app built with flutter",
+      urlAuthority: "github.com",
+      urlPath: "/Boahen123/taskyy"),
   ProjectModel(
       // image: "assets/images/id_card.png",
-      projectName: "Covid-19 Tracker",
+      projectName: "Identity Card",
       projectDescription:
-          "A mobile application that tracks the number of Covid-19 cases in Ghana and the world at large.",
-      urlAuthority: "",
-      urlPath: ""),
+          "A digital identity card displaying my contact information.",
+      urlAuthority: "github.com",
+      urlPath: "/Boahen123/id_card_app"),
   ProjectModel(
       // image: "assets/images/world_time.png",
-      projectName: "Covid-19 Tracker",
+      projectName: "World Time",
       projectDescription:
-          "A mobile application that tracks the number of Covid-19 cases in Ghana and the world at large."
-          "A mobile application that tracks the number of Covid-19 cases in Ghana and the world at large. ",
-      urlAuthority: "",
-      urlPath: ""),
+          "Check the time of various select cities, built with Flutter.",
+      urlAuthority: "github.com",
+      urlPath: "/Boahen123/world_time"),
   ProjectModel(
       // image: "assets/images/qr_code_gen.png",
-      projectName: "Covid-19 Tracker",
+      projectName: "QR Code Generator",
       projectDescription:
-          "A mobile application that tracks the number of Covid-19 cases in Ghana and the world at large.",
-      urlAuthority: "",
-      urlPath: ""),
+          "Use the segno python library as well as the Google Chart API to generate QR code.",
+      urlAuthority: "gitlab.com",
+      urlPath: "/papakofi/qr-code-generator"),
   ProjectModel(
       image: "assets/images/Circuit_diagram.png",
-      projectName: "Covid-19 Tracker",
+      projectName: "Basic Logic Gates",
       projectDescription:
-          "A mobile application that tracks the number of Covid-19 cases in Ghana and the world at large.",
-      urlAuthority: "",
-      urlPath: ""),
+          "Build and/or simulate basic logic gates using Arduino.",
+      urlAuthority: "github.com",
+      urlPath: "https://github.com/Boahen123/BasicLogicGates"),
 ];

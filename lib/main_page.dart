@@ -28,7 +28,7 @@ class _ProfilePageState extends State<ProfilePage> {
     const double skillsLocation = 800;
     const double workLocation = 1000;
     // const double educationLocation = 900;
-    const double projectsLocation = 1600;
+    const double projectsLocation = 1800;
     const double contactsLocation = 1900;
     final GlobalKey aboutKey = GlobalKey();
 
@@ -40,7 +40,7 @@ class _ProfilePageState extends State<ProfilePage> {
           drawer: ResponsiveWidget.isSmallScreen(context)
               ? MenuDrawer(
                   size: size,
-                  contactLocation: contactsLocation,
+                  workLocation: workLocation,
                   aboutLocation: aboutLocation,
                   skillsLocation: skillsLocation,
                 )

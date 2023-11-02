@@ -60,16 +60,6 @@ class NavBar extends StatelessWidget {
             Padding(
               padding: const EdgeInsets.only(right: 8.0),
               child: NavButton(
-                text: "Contact",
-                onPressed: () {
-                  sliderPageController.scrollTo(
-                      scrollController, contactLocation!);
-                },
-              ),
-            ),
-            Padding(
-              padding: const EdgeInsets.only(right: 8.0),
-              child: NavButton(
                 text: "Work",
                 onPressed: () {
                   sliderPageController.scrollTo(

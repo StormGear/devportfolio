@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:portfolio/data/information.dart';
+import 'package:portfolio/services/launcher.dart';
 
 class ProjectsSmall extends StatelessWidget {
   const ProjectsSmall({super.key});
@@ -25,53 +26,71 @@ class ProjectsSmall extends StatelessWidget {
             scrollDirection: Axis.horizontal,
             itemBuilder: (context, index) => Padding(
                   padding: const EdgeInsets.all(10.0),
-                  child: Container(
-                      width: size.width * 0.5,
-                      decoration: BoxDecoration(
-                        border: Border.all(color: Colors.lightBlue),
-                        borderRadius: BorderRadius.circular(10),
-                      ),
-                      padding: const EdgeInsets.all(10),
-                      child: Column(
-                        children: [
-                          if (projects[index].image != null)
-                            Container(
-                                padding: const EdgeInsets.all(8),
-                                child: AspectRatio(
-                                    aspectRatio: 12 / 5,
-                                    child: ClipRRect(
-                                      borderRadius: BorderRadius.circular(10),
-                                      child: Image.asset(
-                                        "${projects[index].image}",
-                                        fit: BoxFit.fill,
-                                      ),
-                                    ))),
-                          if (projects[index].image == null)
+                  child: FittedBox(
+                    child: Container(
+                        width: size.width * 0.5,
+                        decoration: BoxDecoration(
+                          border: Border.all(color: Colors.lightBlue),
+                          borderRadius: BorderRadius.circular(10),
+                        ),
+                        padding: const EdgeInsets.all(10),
+                        child: Column(
+                          children: [
+                            projects[index].image == null
+                                ? const SizedBox()
+                                : Container(
+                                    padding: const EdgeInsets.all(8),
+                                    child: AspectRatio(
+                                        aspectRatio: 12 / 5,
+                                        child: ClipRRect(
+                                          borderRadius:
+                                              BorderRadius.circular(10),
+                                          child: Image.asset(
+                                            "${projects[index].image}",
+                                            fit: BoxFit.fill,
+                                          ),
+                                        ))),
+                            if (projects[index].image == null)
+                              SizedBox(
+                                height: size.height * 0.01,
+                              ),
+                            TextButton(
+                              onPressed: () async {
+                                if (projects[index].urlAuthority != null &&
+                                    projects[index].urlPath != null) {
+                                  await Launcher.launch(
+                                      projects[index].urlAuthority,
+                                      projects[index].urlPath,
+                                      true);
+                                }
+                              },
+                              child: Text(
+                                projects[index].projectName,
+                                softWrap: true,
+                                style: const TextStyle(
+                                    color: Colors.lightBlue,
+                                    fontWeight: FontWeight.bold),
+                              ),
+                            ),
                             SizedBox(
                               height: size.height * 0.01,
                             ),
-                          Text(
-                            projects[index].projectName,
-                            softWrap: true,
-                            style: const TextStyle(color: Colors.lightBlue),
-                          ),
-                          SizedBox(
-                            height: size.height * 0.01,
-                          ),
-                          Flexible(
-                            child: Text(
-                              projects[index].projectDescription,
-                              softWrap: true,
-                              style: const TextStyle(
-                                color: Colors.lightBlue,
+                            Wrap(children: [
+                              Text(
+                                projects[index].projectDescription,
+                                textScaleFactor: 0.8,
+                                softWrap: true,
+                                style: const TextStyle(
+                                  color: Colors.white,
+                                ),
                               ),
+                            ]),
+                            SizedBox(
+                              height: size.height * 0.01,
                             ),
-                          ),
-                          SizedBox(
-                            height: size.height * 0.01,
-                          ),
-                        ],
-                      )),
+                          ],
+                        )),
+                  ),
                 )),
       )
     ]);
