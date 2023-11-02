@@ -46,7 +46,6 @@ class _ProfilePageState extends State<ProfilePage> {
                 )
               : null,
           body: NestedScrollView(
-              // controller: scroller,
               headerSliverBuilder:
                   (BuildContext context, bool innerBoxIsScrolled) {
                 // Customize your header here if needed.
@@ -70,12 +69,10 @@ class _ProfilePageState extends State<ProfilePage> {
                   ),
                 ];
               },
-              body: SingleChildScrollView(
+              body: ListView(
                 controller: SliderPageController.instance.scrollController,
-                child: AnimatedPadding(
-                  duration: const Duration(seconds: 1),
-                  padding: EdgeInsets.all(size.height * 0.0001),
-                  child: ResponsiveWidget(
+                children: [
+                  ResponsiveWidget(
                     largeScreen: Column(
                         mainAxisAlignment: MainAxisAlignment.start,
                         children: [
@@ -105,8 +102,8 @@ class _ProfilePageState extends State<ProfilePage> {
                           const ProjectSection(),
                           const SocialInfo(),
                         ]),
-                  ),
-                ),
+                  )
+                ],
               ))),
     );
   }
