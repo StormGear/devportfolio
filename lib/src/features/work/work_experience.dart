@@ -120,13 +120,14 @@ class WorkAndEducation extends StatelessWidget {
               itemCount: schools.length,
               itemBuilder: (context, index) {
                 return Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     SizedBox(
                       height: size.height * 0.02,
                     ),
                     EducationCardLarge(
                       size: size,
-                      school: schools[0],
+                      school: schools[index],
                     ),
                   ],
                 );
