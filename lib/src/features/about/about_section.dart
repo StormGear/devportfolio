@@ -44,28 +44,9 @@ class AboutSection extends StatelessWidget {
                   SizedBox(
                     height: 10,
                   ),
-                  Row(
-                    children: [
-                      Text("I am a ",
-                          textScaleFactor: 1,
-                          style: TextStyle(
-                            color: Colors.lightBlue,
-                          )),
-                      Text(
-                        "Student",
-                        textScaleFactor: 1,
-                        style: TextStyle(
-                            color: Colors.lightBlue,
-                            fontWeight: FontWeight.bold),
-                      ),
-                    ],
-                  ),
-                  SizedBox(
-                    height: 10,
-                  ),
                   Text(about,
                       softWrap: true,
-                      textScaleFactor: 1.2,
+                      textScaleFactor: 1.15,
                       style: TextStyle(color: Colors.white)),
                 ],
               ),

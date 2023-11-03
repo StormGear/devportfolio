@@ -1,9 +1,7 @@
 // strings of content
 
 /// about me
-const String about = "A Google Developer Student Club (GDSC) lead at "
-    "Academic City University passionate about app "
-    "development with flutter.\n";
-
-/// headline
-const String headline = "Mobile Developer || Computer Engineering Student \n";
+const String about =
+    "I am a goal-driven Software Engineer specialising in developing mobiile apps. As a student, I have been able to juggle academic work, alongside working on projects. I build apps in flutter using "
+    "Firebase. I also have interests in frontend web development and IoT. I possess complementary community leadership background as GDSC Lead. "
+    "I am honing my skills each day.\n";

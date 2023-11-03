@@ -12,6 +12,7 @@ class NonTech extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
+        padding: const EdgeInsets.only(left: 20.0),
         color: Colors.black,
         child: Center(
           child: Column(
@@ -20,42 +21,44 @@ class NonTech extends StatelessWidget {
               SizedBox(
                 height: size.height * 0.01,
               ),
-              Row(
-                children: [
-                  const BulletPoint(),
-                  const Text(
-                    "Communication",
-                    softWrap: true,
-                    textScaleFactor: 1.2,
-                    style: TextStyle(color: Colors.white),
-                  ),
-                  SizedBox(
-                    width: size.width * 0.1,
-                  ),
-                  const BulletPoint(),
-                  const Text(
-                    "Self-discipline",
-                    softWrap: true,
-                    textScaleFactor: 1.2,
-                    style: TextStyle(color: Colors.white),
-                  ),
-                  SizedBox(
-                    width: size.width * 0.1,
-                  ),
-                  ResponsiveWidget.isLargeScreen(context)
-                      ? const Row(
-                          children: [
-                            BulletPoint(),
-                            Text(
-                              "Leadership",
-                              softWrap: true,
-                              textScaleFactor: 1.2,
-                              style: TextStyle(color: Colors.white),
-                            ),
-                          ],
-                        )
-                      : const Text('')
-                ],
+              Flexible(
+                child: Row(
+                  children: [
+                    const BulletPoint(),
+                    const Text(
+                      "Communication",
+                      softWrap: true,
+                      textScaleFactor: 1,
+                      style: TextStyle(color: Colors.white),
+                    ),
+                    SizedBox(
+                      width: size.width * 0.1,
+                    ),
+                    const BulletPoint(),
+                    const Text(
+                      "Self-discipline",
+                      softWrap: true,
+                      textScaleFactor: 1,
+                      style: TextStyle(color: Colors.white),
+                    ),
+                    SizedBox(
+                      width: size.width * 0.1,
+                    ),
+                    ResponsiveWidget.isLargeScreen(context)
+                        ? const Row(
+                            children: [
+                              BulletPoint(),
+                              Text(
+                                "Leadership",
+                                softWrap: true,
+                                textScaleFactor: 1,
+                                style: TextStyle(color: Colors.white),
+                              ),
+                            ],
+                          )
+                        : const Text('')
+                  ],
+                ),
               ),
               SizedBox(
                 height: size.height * 0.02,
@@ -67,7 +70,7 @@ class NonTech extends StatelessWidget {
                     const Text(
                       "Time Management",
                       softWrap: true,
-                      textScaleFactor: 1.2,
+                      textScaleFactor: 1,
                       style: TextStyle(color: Colors.white),
                     ),
                     SizedBox(
@@ -77,7 +80,7 @@ class NonTech extends StatelessWidget {
                     const Text(
                       "Leadership",
                       softWrap: true,
-                      textScaleFactor: 1.2,
+                      textScaleFactor: 1,
                       style: TextStyle(color: Colors.white),
                     ),
                     SizedBox(
