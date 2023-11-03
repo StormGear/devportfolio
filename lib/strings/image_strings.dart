@@ -38,3 +38,6 @@ const String arduinoLogo = 'assets/logos/arduino.svg';
 
 /// Asustem logo
 const String asustemLogo = 'assets/logos/asustem.svg';
+
+/// X logo
+const String xLogo = 'assets/logos/x.svg';

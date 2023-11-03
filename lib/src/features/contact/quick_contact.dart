@@ -24,7 +24,7 @@ class QuickContact extends StatelessWidget {
                 },
                 icon: SvgPicture.asset(
                   gmailLogo,
-                  height: 35,
+                  height: 30,
                 ),
                 alignment: Alignment.centerLeft,
               ),
@@ -59,8 +59,7 @@ class QuickContact extends StatelessWidget {
               SizedBox(width: MediaQuery.of(context).size.height * 0.01),
               IconButton(
                 onPressed: () async {
-                  var url = Uri.https('twitter.com',
-                      '/kofiishere?t=5oqhIj7rjrYqRCnP9GpXIQ&s=09');
+                  var url = Uri.https('twitter.com', '/kofiishere');
                   if (await canLaunchUrl(url)) {
                     await launchUrl(url);
                   }
@@ -90,7 +89,7 @@ class QuickContact extends StatelessWidget {
               },
               icon: SvgPicture.asset(
                 gmailLogo,
-                height: 35,
+                height: 30,
               ),
               alignment: Alignment.centerLeft,
             ),
@@ -125,8 +124,7 @@ class QuickContact extends StatelessWidget {
             SizedBox(width: MediaQuery.of(context).size.height * 0.01),
             IconButton(
               onPressed: () async {
-                var url = Uri.https(
-                    'twitter.com', '/kofiishere?t=5oqhIj7rjrYqRCnP9GpXIQ&s=09');
+                var url = Uri.https('twitter.com', '/kofiishere');
                 if (await canLaunchUrl(url)) {
                   await launchUrl(url);
                 }

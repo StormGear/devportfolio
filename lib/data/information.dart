@@ -51,7 +51,13 @@ List<SkillModel> skills = [
         flutterLogo,
         height: 35,
       ),
-      skillname: "flutter"),
+      skillname: "Flutter"),
+  SkillModel(
+      icon: SvgPicture.asset(
+        firebaseLogo,
+        height: 35,
+      ),
+      skillname: "Firebase"),
   SkillModel(
       icon: SvgPicture.asset(
         pythonLogo,
