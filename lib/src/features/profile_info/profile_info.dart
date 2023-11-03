@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:portfolio/strings/image_strings.dart';
-import 'package:portfolio/strings/main_content.dart';
+// import 'package:portfolio/strings/main_content.dart';
 import 'package:portfolio/src/features/contact/quick_contact.dart';
 import 'package:portfolio/services/responsive_widget.dart';
+import 'package:animated_text_kit/animated_text_kit.dart';
 
 class ProfileInfo extends StatelessWidget {
   const ProfileInfo({super.key});
@@ -33,31 +34,58 @@ class ProfileInfo extends StatelessWidget {
     );
   }
 
-  Padding profileData(Size size) => const Padding(
-        padding: EdgeInsets.only(left: 8.0),
+  Padding profileData(Size size) => Padding(
+        padding: const EdgeInsets.only(left: 8.0),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            Text("Hello there! My name is",
+            const Text("Hello there! My name is",
                 textScaleFactor: 1.5,
                 style: TextStyle(
                   color: Colors.lightBlue,
                 )),
-            Text(
+            const Text(
               "Papa Kofi Boahen",
               textScaleFactor: 1.5,
               style: TextStyle(
                   color: Colors.lightBlue, fontWeight: FontWeight.bold),
             ),
-            SizedBox(
+            const SizedBox(
               height: 10,
             ),
-            Text(headline,
-                softWrap: true,
-                textScaleFactor: 1.2,
-                style: TextStyle(color: Colors.white)),
-            SizedBox(height: 20),
-            QuickContact()
+            Row(children: [
+              DefaultTextStyle(
+                style: const TextStyle(
+                  fontSize: 20.0,
+                  color: Colors.white,
+                ),
+                child: AnimatedTextKit(
+                  animatedTexts: [
+                    WavyAnimatedText('I am a'),
+                  ],
+                  repeatForever: true,
+                ),
+              ),
+              const SizedBox(
+                width: 10.0,
+              ),
+              DefaultTextStyle(
+                style: const TextStyle(
+                    color: Colors.white, fontSize: 20),
+                child: AnimatedTextKit(repeatForever: true, animatedTexts: [
+                  TypewriterAnimatedText(
+                    'Mobile Developer',
+                    speed: const Duration(milliseconds: 50),
+                  ),
+                  TypewriterAnimatedText('GDSC Lead at ACity',
+                      speed: const Duration(milliseconds: 50)),
+                  TypewriterAnimatedText('CE Student',
+                      speed: const Duration(milliseconds: 50)),
+                ]),
+              ),
+            ]),
+            const SizedBox(height: 20),
+            const QuickContact()
             // Row(
             //   mainAxisAlignment: MainAxisAlignment.start,
             //   children: [

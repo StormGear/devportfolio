@@ -31,6 +31,19 @@
 
     <title>Papa Kofi</title>
     <link rel="manifest" href="manifest.json" />
+    <style>
+      .container {
+        width: 100vw;
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+
+      .indicator {
+        width: 50vw;
+      }
+    </style>
 
     <script>
       // The value below is injected by flutter build, do not touch.
@@ -39,7 +52,10 @@
     <!-- This script adds the flutter initialization JS code -->
     <script src="flutter.js" defer></script>
   </head>
-  <body>
+  <body style="overflow: hidden">
+    <div id="loading_indicator" class="container">
+      <img src="./assets/giphy-vid-unscreen.gif" alt="" class="indicator" />
+    </div>
     <script>
       window.addEventListener('load', function (ev) {
         // Download main.dart.js
@@ -54,6 +70,16 @@
           },
         });
       });
+    </script>
+    <script>
+      window.onload = function () {
+        setTimeout(function ()  {
+            var loadingIndicator = document.getElementById("loading_indicator");
+            if (loadingIndicator) {
+              loadingIndicator.remove();
+            }
+        }, 10000);
+      };
     </script>
   </body>
 </html>
