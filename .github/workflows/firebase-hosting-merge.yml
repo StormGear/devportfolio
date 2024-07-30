@@ -31,7 +31,7 @@ jobs:
         run: firebase experiments:enable webframeworks
 
       - name: Authenticate with Firebase
-        run: firebase login:ci
+        run: firebase login:ci --interactive
         env:
           FIREBASE_TOKEN: ${{ secrets.FIREBASE_TOKEN }}
 
