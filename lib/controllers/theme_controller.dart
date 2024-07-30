@@ -10,6 +10,14 @@ class ThemeController extends GetxController {
   final Color lightTextColorBlack = Colors.black;
   final Rx<Color> darkTextColorWhite = Colors.white.obs;
   final Color darkTextColor = Colors.lightBlue;
+  final Color lightBackgroundColor = Colors.white;
+  final Color darkBackgroundColor = Colors.black;
+  bool isDarkMode = false;
+
+  void toggleIsDarkMode() {
+    isDarkMode = !isDarkMode;
+    update();
+  }
 
   final Color lightContainerColor = Colors.white12;
   final Color darkContainerColor = Colors.black;

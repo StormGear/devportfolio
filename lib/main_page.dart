@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:portfolio/controllers/slider_page_controller.dart';
+import 'package:portfolio/controllers/theme_controller.dart';
 import 'package:portfolio/src/features/about/about_section.dart';
 import 'package:portfolio/src/features/profile_info/name.dart';
 import 'package:portfolio/src/features/navigation/navbar.dart';
@@ -33,10 +34,13 @@ class _ProfilePageState extends State<ProfilePage> {
     final GlobalKey aboutKey = GlobalKey();
 
     Get.put<SliderPageController>(SliderPageController());
+    Get.put<ThemeController>(ThemeController());
 
     return ResponsiveWidget(
       largeScreen: Scaffold(
-          backgroundColor: Colors.black,
+          backgroundColor: ThemeController.instance.isDarkMode
+              ? ThemeController.instance.darkBackgroundColor
+              : ThemeController.instance.lightBackgroundColor,
           drawer: ResponsiveWidget.isSmallScreen(context)
               ? MenuDrawer(
                   size: size,

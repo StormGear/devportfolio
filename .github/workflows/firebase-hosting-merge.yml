@@ -31,9 +31,9 @@ jobs:
         run: firebase experiments:enable webframeworks
 
       - name: Deploy to Firebase Hosting
-        run: firebase deploy --token "$FIREBASE_TOKEN" # need to be changed since it's not secure
-        env:
-          FIREBASE_TOKEN: ${{ secrets.FIREBASE_TOKEN }}
+        run:  GOOGLE_APPLICATION_CREDENTIALS=credentials.json firebase deploy # need to be changed since it's not secure
+        # env:
+        #   FIREBASE_TOKEN: ${{ secrets.FIREBASE_TOKEN }}
 
   # checkout a more secure way to authenticate for firebase
   #     - name: Deploy to Firebase
