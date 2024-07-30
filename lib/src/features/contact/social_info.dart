@@ -31,7 +31,7 @@ class SocialInfo extends StatelessWidget {
               ),
               IconButton(
                 onPressed: () async {
-                  var url = Uri.https('github.com', '/Boahen123');
+                  var url = Uri.https('github.com', '/StormGear');
                   if (await canLaunchUrl(url)) {
                     await launchUrl(url);
                   }
