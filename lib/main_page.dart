@@ -38,9 +38,7 @@ class _ProfilePageState extends State<ProfilePage> {
 
     return ResponsiveWidget(
       largeScreen: Scaffold(
-          backgroundColor: ThemeController.instance.isDarkMode
-              ? ThemeController.instance.darkBackgroundColor
-              : ThemeController.instance.lightBackgroundColor,
+          backgroundColor: Colors.black,
           drawer: ResponsiveWidget.isSmallScreen(context)
               ? MenuDrawer(
                   size: size,
