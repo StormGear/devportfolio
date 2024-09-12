@@ -5,9 +5,9 @@ name: Deploy to Firebase Hosting on merge
 'on':
   push:
     branches:
-      - main
+      - kofi
   workflow_dispatch:
-    
+
 jobs:
   deployment:
     runs-on: ubuntu-latest
