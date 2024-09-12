@@ -37,7 +37,7 @@ class AboutSection extends StatelessWidget {
               child: Column(
                 children: [
                   Text("About Papa Kofi",
-                      textScaleFactor: 1.5,
+                      textScaler: TextScaler.linear(1.5),
                       style: TextStyle(
                         color: Colors.lightBlue,
                       )),
@@ -46,7 +46,7 @@ class AboutSection extends StatelessWidget {
                   ),
                   Text(about,
                       softWrap: true,
-                      textScaleFactor: 1.15,
+                      textScaler: TextScaler.linear(1.15),
                       style: TextStyle(color: Colors.white)),
                 ],
               ),

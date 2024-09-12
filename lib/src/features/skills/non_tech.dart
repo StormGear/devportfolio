@@ -28,7 +28,7 @@ class NonTech extends StatelessWidget {
                     const Text(
                       "Communication",
                       softWrap: true,
-                      textScaleFactor: 1,
+                      textScaler: TextScaler.linear(1),
                       style: TextStyle(color: Colors.white),
                     ),
                     SizedBox(
@@ -38,7 +38,7 @@ class NonTech extends StatelessWidget {
                     const Text(
                       "Self-discipline",
                       softWrap: true,
-                      textScaleFactor: 1,
+                      textScaler: TextScaler.linear(1),
                       style: TextStyle(color: Colors.white),
                     ),
                     SizedBox(
@@ -51,7 +51,7 @@ class NonTech extends StatelessWidget {
                               Text(
                                 "Leadership",
                                 softWrap: true,
-                                textScaleFactor: 1,
+                                textScaler: TextScaler.linear(1),
                                 style: TextStyle(color: Colors.white),
                               ),
                             ],
@@ -70,7 +70,7 @@ class NonTech extends StatelessWidget {
                     const Text(
                       "Time Management",
                       softWrap: true,
-                      textScaleFactor: 1,
+                      textScaler: TextScaler.linear(1),
                       style: TextStyle(color: Colors.white),
                     ),
                     SizedBox(
@@ -80,7 +80,7 @@ class NonTech extends StatelessWidget {
                     const Text(
                       "Leadership",
                       softWrap: true,
-                      textScaleFactor: 1,
+                      textScaler: TextScaler.linear(1),
                       style: TextStyle(color: Colors.white),
                     ),
                     SizedBox(
@@ -93,7 +93,7 @@ class NonTech extends StatelessWidget {
                               Text(
                                 "Creativity",
                                 softWrap: true,
-                                textScaleFactor: 1.2,
+                                textScaler: TextScaler.linear(1.2),
                                 style: TextStyle(color: Colors.white),
                               ),
                             ],

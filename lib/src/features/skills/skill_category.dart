@@ -22,7 +22,7 @@ class SkillCategoryState extends State<SkillCategory> {
         children: [
           const Center(
             child: Text("My Skills",
-                textScaleFactor: 1.5,
+                textScaler: TextScaler.linear(1.5),
                 style: TextStyle(color: Colors.lightBlue)),
           ),
           Container(
@@ -51,7 +51,7 @@ class SkillCategoryState extends State<SkillCategory> {
                       ),
                       child: const Text(
                         'Technical Skills',
-                        textScaleFactor: 1,
+                        textScaler: TextScaler.linear(1),
                         style: TextStyle(
                             fontSize: 18.0,
                             fontWeight: FontWeight.bold,
@@ -80,7 +80,7 @@ class SkillCategoryState extends State<SkillCategory> {
                       ),
                       child: const Text(
                         'Non-Technical Skills',
-                        textScaleFactor: 1,
+                        textScaler: TextScaler.linear(1),
                         style: TextStyle(
                             fontSize: 18.0,
                             fontWeight: FontWeight.bold,

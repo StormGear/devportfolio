@@ -64,13 +64,13 @@ class EducationCardLarge extends StatelessWidget {
                 child: Text(
                   school.schoolName,
                   softWrap: true,
-                  textScaleFactor: 1.2,
+                  textScaler: const TextScaler.linear(1.2),
                   style: const TextStyle(
                       color: Colors.lightBlue, fontWeight: FontWeight.bold),
                 ),
               ),
               Text(school.period,
-                  textScaleFactor: 1,
+                  textScaler: const TextScaler.linear(1),
                   style: const TextStyle(color: Colors.white)),
               SizedBox(
                 height: size.height * 0.01,
@@ -79,10 +79,10 @@ class EducationCardLarge extends StatelessWidget {
                   ? Column(
                       children: [
                         const Text("Awards",
-                            textScaleFactor: 0.9,
+                            textScaler:  TextScaler.linear(0.9),
                             style: TextStyle(color: Colors.white)),
                         Text("${school.awardDescription}",
-                            textScaleFactor: 0.8,
+                            textScaler: const TextScaler.linear(0.8),
                             softWrap: true,
                             style: const TextStyle(color: Colors.white))
                       ],
@@ -164,13 +164,13 @@ class EducationCardSmall extends StatelessWidget {
                   child: Text(
                     school.schoolName,
                     softWrap: true,
-                    textScaleFactor: 1.2,
+                    textScaler: const TextScaler.linear(1.2),
                     style: const TextStyle(
                         color: Colors.lightBlue, fontWeight: FontWeight.bold),
                   ),
                 ),
                 Text(school.period,
-                    textScaleFactor: 1,
+                    textScaler: const TextScaler.linear(1),
                     style: const TextStyle(color: Colors.white)),
                 school.awards == true
                     ? Column(
@@ -179,13 +179,13 @@ class EducationCardSmall extends StatelessWidget {
                             height: size.height * 0.01,
                           ),
                           const Text("Awards",
-                              textScaleFactor: 0.9,
+                              textScaler: TextScaler.linear(0.9),
                               style: TextStyle(color: Colors.white)),
                           SizedBox(
                             height: size.height * 0.01,
                           ),
                           Text("${school.awardDescription}",
-                              textScaleFactor: 0.8,
+                              textScaler: const TextScaler.linear(0.8),
                               softWrap: true,
                               style: const TextStyle(color: Colors.white))
                         ],

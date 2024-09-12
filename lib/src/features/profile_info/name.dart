@@ -11,7 +11,7 @@ class Papa extends StatelessWidget {
           padding: EdgeInsets.only(left: 8.0),
           child: Text(
             "< Papa />",
-            textScaleFactor: 1.5,
+            textScaler: TextScaler.linear(1.5),
             style: TextStyle(
               color: Colors.lightBlue,
               fontWeight: FontWeight.bold,
