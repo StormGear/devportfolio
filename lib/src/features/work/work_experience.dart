@@ -15,7 +15,7 @@ class WorkAndEducation extends StatelessWidget {
           children: [
             const Center(
               child: Text('Work Experience',
-                  textScaleFactor: 1.5,
+                  textScaler: TextScaler.linear(1.5),
                   style: TextStyle(color: Colors.lightBlue)),
             ),
             ListView.builder(
@@ -48,7 +48,7 @@ class WorkAndEducation extends StatelessWidget {
           children: [
             const Center(
               child: Text('Education',
-                  textScaleFactor: 1.5,
+                  textScaler: TextScaler.linear(1.5),
                   style: TextStyle(color: Colors.lightBlue)),
             ),
             ListView.builder(
@@ -81,7 +81,7 @@ class WorkAndEducation extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               const Text('Work Experience',
-                  textScaleFactor: 1.5,
+                  textScaler: TextScaler.linear(1.5),
                   style: TextStyle(color: Colors.lightBlue)),
               ListView.builder(
                 shrinkWrap: true,
@@ -112,7 +112,7 @@ class WorkAndEducation extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             const Text('Education',
-                textScaleFactor: 1.5,
+                textScaler: TextScaler.linear(1.5),
                 style: TextStyle(color: Colors.lightBlue)),
             ListView.builder(
               shrinkWrap: true,

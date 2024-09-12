@@ -70,19 +70,19 @@ class WorkCardSmall extends StatelessWidget {
                   child: Text(
                     work.companyName,
                     softWrap: true,
-                    textScaleFactor: 1.2,
+                    textScaler: const TextScaler.linear(1.2),
                     style: const TextStyle(
                         color: Colors.lightBlue, fontWeight: FontWeight.bold),
                   ),
                 ),
                 Text(work.period,
-                    textScaleFactor: 1,
+                    textScaler: const TextScaler.linear(1),
                     style: const TextStyle(color: Colors.white)),
                 SizedBox(
                   height: size.height * 0.01,
                 ),
                 Text("${work.role}",
-                    textScaleFactor: 0.9,
+                    textScaler: const TextScaler.linear(0.9),
                     style: const TextStyle(color: Colors.white)),
                 work.description == null
                     ? const Text("")
@@ -159,19 +159,19 @@ class WorkCardLarge extends StatelessWidget {
                 child: Text(
                   work.companyName,
                   softWrap: true,
-                  textScaleFactor: 1.2,
+                  textScaler: const TextScaler.linear(1.2),
                   style: const TextStyle(
                       color: Colors.lightBlue, fontWeight: FontWeight.bold),
                 ),
               ),
               Text(work.period,
-                  textScaleFactor: 1,
+                  textScaler: const TextScaler.linear(1),
                   style: const TextStyle(color: Colors.white)),
               SizedBox(
                 height: size.height * 0.01,
               ),
               Text("${work.role}",
-                  textScaleFactor: 0.9,
+                  textScaler: const TextScaler.linear(1),
                   softWrap: true,
                   style: const TextStyle(color: Colors.white)),
               SizedBox(
@@ -180,7 +180,7 @@ class WorkCardLarge extends StatelessWidget {
               work.description == null
                   ? const Text("")
                   : Text("${work.description}",
-                      textScaleFactor: 0.8,
+                      textScaler: const TextScaler.linear(0.8),
                       softWrap: true,
                       style: const TextStyle(color: Colors.white))
             ],

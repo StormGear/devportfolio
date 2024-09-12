@@ -40,13 +40,13 @@ class ProfileInfo extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             const Text("Hello there! My name is",
-                textScaleFactor: 1.5,
+                textScaler: TextScaler.linear(1.5),
                 style: TextStyle(
                   color: Colors.lightBlue,
                 )),
             const Text(
               "Papa Kofi Boahen",
-              textScaleFactor: 1.5,
+              textScaler:  TextScaler.linear(1.5),
               style: TextStyle(
                   color: Colors.lightBlue, fontWeight: FontWeight.bold),
             ),

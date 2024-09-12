@@ -12,7 +12,7 @@ class ProjectsLarge extends StatelessWidget {
     return Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
       const Center(
         child: Text("My Projects",
-            textScaleFactor: 1.5, style: TextStyle(color: Colors.lightBlue)),
+            textScaler: TextScaler.linear(1.5), style: TextStyle(color: Colors.lightBlue)),
       ),
       SizedBox(
         height: size.height * 0.01,
@@ -69,7 +69,7 @@ class ProjectsLarge extends StatelessWidget {
                               child: Text(
                                 projects[index].projectName,
                                 softWrap: true,
-                                textScaleFactor: 0.8,
+                                textScaler: const TextScaler.linear(0.8),
                                 style: const TextStyle(
                                     color: Colors.lightBlue,
                                     fontWeight: FontWeight.bold),
@@ -81,7 +81,7 @@ class ProjectsLarge extends StatelessWidget {
                             Text(
                               projects[index].projectDescription,
                               softWrap: true,
-                              textScaleFactor: 0.6,
+                              textScaler: const TextScaler.linear(0.6),
                               style: const TextStyle(
                                 color: Colors.white,
                               ),

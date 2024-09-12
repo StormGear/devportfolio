@@ -83,7 +83,7 @@ class SocialInfo extends StatelessWidget {
               Image(image: AssetImage(flutterLogo), height: 25.0, width: 25.0),
               Text(
                 "made with flutter",
-                textScaleFactor: 0.8,
+                textScaler: TextScaler.linear(0.8),
                 style: TextStyle(color: Colors.white),
               ),
             ],
@@ -156,7 +156,7 @@ class SocialInfo extends StatelessWidget {
             Image(image: AssetImage(flutterLogo), height: 25.0, width: 25.0),
             Text(
               "made with flutter",
-              textScaleFactor: 0.8,
+              textScaler:TextScaler.linear(0.8),
               style: TextStyle(color: Colors.white),
             ),
           ],
