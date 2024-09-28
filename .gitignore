@@ -32,7 +32,6 @@ credentials.json
 .pub-cache/
 .pub/
 /build/
-credentials.json
 
 # Symbolication related
 app.*.symbols
